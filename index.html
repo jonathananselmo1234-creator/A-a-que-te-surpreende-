@@ -3,49 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Açaí que te Surpreende</title>
+<title>Área de Membros - Açaí que te Surpreende</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0a1a;color:#fff;font-family:Arial,sans-serif;line-height:1.5}
-.container{max-width:600px;margin:0 auto;padding:16px}
-.hero{text-align:center;padding:30px 10px}
-.hero h1{font-size:32px;font-weight:900}
-.hero h1 span{color:#ffea00}
-.foto{width:100%;height:320px;background:#151528;border-radius:16px;display:flex;align-items:center;justify-content:center;color:#666;margin-top:20px;border:2px dashed #333}
-.lista{background:#151528;border-radius:16px;padding:20px;margin-top:20px}
-.lista h2{color:#ffea00;text-align:center}
-.preco{background:#151528;border:2px solid #ffea00;border-radius:16px;padding:20px;text-align:center;margin-top:20px}
-.preco .valor{color:#ffea00;font-size:48px;font-weight:900;display:block}
-.timer{background:#b91c1c;border-radius:14px;padding:16px;text-align:center;margin-top:20px}
-.timer .hora{font-size:44px;font-weight:900;display:block}
-.area-compra{background:#ffea00;padding:22px;border-radius:16px;text-align:center;margin-top:20px}
-.btn-comprar{display:block;background:#000;color:#ffea00;padding:20px;border-radius:12px;font-weight:900;text-decoration:none;font-size:22px}
-.garantia{background:#fff;border:2px dashed #000;border-radius:12px;padding:14px;margin-top:18px}
-.garantia .titulo{color:#00a86b;font-weight:900}
-.garantia p{color:#000;font-weight:600;font-size:13px;margin-top:6px}
+body{background:#0a0a1a;color:#fff;font-family:Arial,sans-serif}
+.login{height:100vh;display:flex;justify-content:center;align-items:center;padding:20px}
+.box{background:#151528;border:2px solid #ffea00;border-radius:16px;padding:28px;width:100%;max-width:380px;text-align:center}
+.box h1{color:#ffea00;font-size:26px}
+.box input{width:100%;padding:14px;border-radius:10px;border:none;margin-top:14px;background:#222;color:#fff;font-size:16px}
+.box button{width:100%;padding:14px;margin-top:14px;background:#ffea00;color:#000;font-weight:900;border-radius:10px;border:none;font-size:16px}
+#site{display:none;max-width:700px;margin:0 auto;padding:16px}
+.topo{background:#ffea00;color:#000;padding:16px;border-radius:14px;text-align:center;font-weight:900;font-size:20px;margin-bottom:20px}
+.mod{background:rgba(255,255,255,0.07);border:1px solid #444;border-radius:14px;padding:16px;margin-top:18px}
+.mod h2{font-size:18px;margin-bottom:12px}
+.mod-3{border-color:#ffea00}.mod-3 h2{color:#ffea00}
+.aula{background:#000;border-radius:10px;padding:12px;margin-top:10px}
+.aula p{color:#ffea00;font-weight:700;font-size:14px;margin-bottom:8px}
+video{width:100%;border-radius:8px;background:#000}
 </style>
 </head>
 <body>
-<div class="container">
-<div class="hero">
-<h1>Chega de vender <span>o mesmo açaí</span> que todo mundo</h1>
-<p>Aprenda o método com diferencial de cupuaçu que ninguém tem.</p>
-</div>
-<div class="foto"><img src="foto-capa.jpg" alt="seu acai" style="width:100%;height:100%;object-fit:cover;border-radius:16px" onerror="this.style.display='none'"></div>
-<div class="lista"><h2>O QUE VOCÊ VAI APRENDER:</h2><ul>
-<li>✅ MÓDULO 1: Apresentação</li>
-<li>✅ MÓDULO 2: Produtos e Fornecedores</li>
-<li>✅ MÓDULO 3: Na prática - Açaí, Cupuaçu e Copo da Felicidade</li>
-<li>✅ MÓDULO 4: Vendas e Divulgação</li>
-<li>✅ MÓDULO 5: Bônus 7 Receitas</li></ul></div>
-<div class="preco"><s>De R$197 por</s><span class="valor">R$87,00</span><div style="background:#000;border-left:4px solid #ffea00;padding:14px;margin-top:10px;text-align:left;font-size:14px"><b style="color:#ffea00">R$87 parece muito? É só 2 açaís de 700ML.</b> No verão você vende isso em menos de 1 hora.</div></div>
-<div class="timer"><b>🔥 ESSA TURMA ENCERRA EM:</b><span class="hora" id="timer">02:05:52</span></div>
-<div class="area-compra">
-<a href="membros.html" class="btn-comprar">COMPRAR AGORA - R$ 87,00</a>
-<div class="garantia"><div class="titulo">7 DIAS DE GARANTIA TOTAL</div><p>Se em 7 dias você não gostar, devolvemos 100% do seu dinheiro. Risco ZERO.</p></div>
-<div style="color:#666;font-size:11px;margin-top:10px">Acesso imediato - Garantia de 7 dias<br>© 2025 Açaí que te Surpreende</div>
+
+<div class="login" id="login">
+<div class="box">
+<h1>ÁREA DE MEMBROS</h1>
+<p style="color:#aaa;font-size:13px;margin-top:6px">Digite sua senha</p>
+<input type="password" id="senha" placeholder="Senha">
+<button onclick="entrar()">ENTRAR</button>
+<p style="color:#666;font-size:11px;margin-top:10px">Senha de teste: ACAI87</p>
 </div>
 </div>
-<script>let t=2*3600+5*60+52;setInterval(()=>{t--;let h=String(Math.floor(t/3600)).padStart(2,'0');let m=String(Math.floor((t%3600)/60)).padStart(2,'0');let s=String(t%60).padStart(2,'0');document.getElementById('timer').innerText=h+':'+m+':'+s},1000);</script>
+
+<div id="site">
+<div class="topo">🍧 AÇAÍ QUE TE SURPREENDE</div>
+
+<div class="mod">
+<h2>MÓDULO 1 - APRESENTAÇÃO</h2>
+<div class="aula"><p>Boas-vindas</p><video controls src="video1.mp4"></video></div>
+</div>
+
+<div class="mod">
+<h2>MÓDULO 2 - PRODUTOS E FORNECEDORES</h2>
+<div class="aula"><p>Produtos</p><video controls src="video2.mp4"></video></div>
+</div>
+
+<div class="mod mod-3">
+<h2>MÓDULO 3 - NA PRÁTICA</h2>
+<div class="aula"><p>Açaí que vende</p><video controls src="video3.mp4"></video></div>
+<div class="aula"><p>Creme de Cupuaçu</p><video controls src="cupuacu.mp4"></video></div>
+<div class="aula"><p>Copo da Felicidade + Cupuaçu</p><video controls src="copo.mp4"></video></div>
+</div>
+
+<div class="mod">
+<h2>MÓDULO 4 - VENDAS E DIVULGAÇÃO</h2>
+<div class="aula"><p>iFood / Instagram / Tráfego</p><video controls src="video4.mp4"></video></div>
+</div>
+
+<div class="mod">
+<h2>MÓDULO 5 - BÔNUS: 7 RECEITAS CASEIRAS</h2>
+<div class="aula"><p>Receitas</p><video controls src="video5.mp4"></video></div>
+</div>
+</div>
+
+<script>
+function entrar(){
+if(document.getElementById('senha').value==='ACAI87'){
+document.getElementById('login').style.display='none';
+document.getElementById('site').style.display='block';
+}else{alert('Senha errada');}
+}
+</script>
 </body>
 </html>
