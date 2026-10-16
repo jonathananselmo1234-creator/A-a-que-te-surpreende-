@@ -7,45 +7,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@600;800;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{
-  background:#08081a;
-  font-family:'Inter',sans-serif;
-  color:#fff;
-  display:flex;
-  justify-content:center;
-  position:relative;
-}
-/* FOTO ESTAMPADA COMO MARCA D'ÁGUA - ATRÁS DE TUDO */
-body::before{
-  content:"";
-  position:fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  background-image:url('foto.jpg');
-  background-size:cover;
-  background-position:center top;
-  background-repeat:no-repeat;
-  opacity:0.15;
-  z-index:-2;
-  pointer-events:none;
-}
-body::after{
-  content:"";
-  position:fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  background:linear-gradient(180deg, rgba(8,8,26,0.78) 0%, rgba(10,10,31,0.92) 100%);
-  z-index:-1;
-}
+body{background:#08081a;font-family:'Inter',sans-serif;color:#fff;display:flex;justify-content:center;position:relative}
+body::before{content:"";position:fixed;top:0;left:0;width:100%;height:100%;background-image:url('IMG-20261014-WA4791.jpg');background-size:cover;background-position:center top;background-repeat:no-repeat;opacity:0.15;z-index:-2;pointer-events:none}
+body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(180deg, rgba(8,8,26,0.78) 0%, rgba(10,10,31,0.92) 100%);z-index:-1}
 .container{width:100%;max-width:480px;position:relative;z-index:1;padding-bottom:40px}
 .hero-wrap{padding:16px 16px 0}
-.hero-photo{
-  width:100%;height:520px;object-fit:cover;
-  border-radius:22px;
-  border:5px solid #ffea00;
-  display:block;
-  box-shadow:0 0 20px #ffea00, 0 0 50px rgba(168,85,247,0.5), 0 12px 30px rgba(0,0,0,0.6);
-}
+.hero-photo{width:100%;height:520px;object-fit:cover;border-radius:22px;border:5px solid #ffea00;display:block;box-shadow:0 0 20px #ffea00,0 0 50px rgba(168,85,247,0.5),0 12px 30px rgba(0,0,0,0.6)}
 .title{font-family:'Anton',sans-serif;font-size:56px;line-height:0.9;color:#a855f7;padding:20px 20px 0;text-transform:uppercase}
 .subtitle{font-family:'Anton',sans-serif;color:#ffea00;font-size:24px;padding:12px 20px 0}
 .card{background:rgba(255,255,255,0.08);backdrop-filter:blur(8px);border:1px solid rgba(168,85,247,0.4);border-radius:14px;padding:18px;margin:18px 20px}
@@ -67,18 +34,14 @@ body::after{
 </head>
 <body>
 <div class="container">
-
 <div class="hero-wrap">
-<img src="foto.jpg" class="hero-photo" alt="Natanael">
+<img src="IMG-20261014-WA4791.jpg" class="hero-photo" alt="Natanael">
 </div>
-
 <div class="title">LUCRANDO COM AÇAÍ</div>
 <div class="subtitle">Eu me chamo Natanael Anselmo</div>
-
 <div class="card">
 <p>Quando comecei meu negócio de açaí, ninguém acreditou que iria dar certo, nem mesmo meus amigos e família, riram de mim, 2 meses depois eu estava faturando 5 mil reais do conforto da minha casa, deixando todos em choque, nesse curso eu quero te mostrar que é 100% possível você fazer o mesmo.</p>
 </div>
-
 <div class="section-title">O QUE VOCÊ VAI APRENDER</div>
 <ul class="list">
 <li><span>✓</span> Como conseguir lucro</li>
@@ -93,19 +56,15 @@ body::after{
 <li><span>✓</span> Qual açaí vender</li>
 <li><span>✓</span> Como criar promoções para popularizar a minha marca</li>
 </ul>
-
 <div class="bonus-title">BÔNUS EXCLUSIVO</div>
 <div class="bonus-box">
 <p>Você ainda aprende a fazer o <span class="yellow">COPO DA FELICIDADE</span> e como colocar ele no seu negócio pra alavancar o seu repertório de venda.</p>
 <p style="margin-top:14px">A gente preparou <span class="yellow-underline">SETE RECEITAS CASEIRAS</span> para agregar e fortalecer o seu negócio que mais vendem atualmente no Brasil: pão caseiro, pastel, bolo de chocolate, bolo de chuva, receitas simples que vão agregar no seu negócio e te ajudar a ter ainda mais lucro.</p>
 </div>
-
 <div class="bonus-highlight">🎁 BÔNUS EXCLUSIVO: COPO DA FELICIDADE + 7 RECEITAS CASEIRAS</div>
 <p class="green">Você será seu próprio chefe sem depender de patrão.</p>
-
 <button class="btn" onclick="window.location.href='https://SEU-LINK-AQUI.com'">QUERO COMEÇAR AGORA</button>
 <div class="small">Acesso imediato • Garantia de 7 dias</div>
-
 </div>
 </body>
 </html>
