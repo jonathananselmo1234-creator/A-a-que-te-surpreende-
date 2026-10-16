@@ -33,6 +33,7 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 .price-parcela{color:#fff;font-size:13px;margin-top:4px}
 .argumento{background:#000;border-left:4px solid #ffea00;border-radius:10px;padding:14px;margin-top:16px;text-align:left}
 .argumento p{font-size:14px;color:#fff;line-height:1.6;font-weight:800}
+.timer-box{background:#b91c1c;border-radius:12px;padding:14px;margin:22px 20px 0;text-align:center;border:2px solid #ffea00}
 .btn{width:calc(100% - 40px);margin:18px 20px 0;background:#ffea00;color:#000;font-family:'Anton',sans-serif;font-size:22px;padding:20px;border-radius:16px;border:none;cursor:pointer;letter-spacing:0.5px;box-shadow:0 0 30px rgba(255,234,0,0.6);animation:pisca 1.2s infinite}
 @keyframes pisca{0%,100%{transform:scale(1);box-shadow:0 0 25px rgba(255,234,0,0.6)}50%{transform:scale(1.05);box-shadow:0 0 45px rgba(255,234,0,1);background:#fff000}}
 .btn:active{transform:scale(0.97)}
@@ -70,7 +71,6 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 </div>
 <div class="bonus-highlight">🎁 BÔNUS: COPO DA FELICIDADE + 7 RECEITAS</div>
 <p class="green">Você será seu próprio chefe sem depender de patrão.</p>
-
 <div class="price-box">
 <div class="price-de">De R$ 197,00 por apenas</div>
 <div class="price-valor">R$ 87,00</div>
@@ -79,7 +79,11 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 <p>R$87 parece muito? É só <span class="yellow">2 açaís de 700ML</span>. No verão você vende isso em <span class="yellow">menos de 1 hora</span> e já recuperou tudo. O resto do ano é só lucro com um conhecimento que ninguém te tira.</p>
 </div>
 </div>
-
+<div class="timer-box">
+<p style="color:#ffea00;font-family:Anton;font-size:16px;letter-spacing:1px">🔥 ESSA TURMA ENCERRA EM:</p>
+<div id="timer" style="color:#fff;font-family:Anton;font-size:36px;line-height:1;margin-top:6px">01:47:00</div>
+<p style="color:#fff;font-size:12px;font-weight:700;margin-top:8px">Depois volta para <span style="text-decoration:line-through">R$197</span> | Restam 7 vagas</p>
+</div>
 <button class="btn" onclick="window.location.href='https://pay.kiwify.com.br/SEU-LINK-AQUI'">QUERO COMEÇAR AGORA POR R$87</button>
 <div class="garantia">
 <div class="garantia-icone">🛡️</div>
@@ -87,5 +91,31 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 </div>
 <div class="small">Acesso imediato • Garantia de 7 dias • Suporte no WhatsApp<br>© 2026 Açaí que te Surpreende</div>
 </div>
+<script>
+(function(){
+  const KEY = 'acai_timer_fim';
+  let fim = localStorage.getItem(KEY);
+  if(!fim){
+    fim = new Date().getTime() + (1*60 + 47)*60*1000;
+    localStorage.setItem(KEY, fim);
+  } else {
+    fim = parseInt(fim);
+  }
+  const el = document.getElementById('timer');
+  setInterval(() => {
+    let agora = new Date().getTime();
+    let diff = fim - agora;
+    if(diff <= 0){
+      fim = new Date().getTime() + (2*60 + 17)*60*1000;
+      localStorage.setItem(KEY, fim);
+      diff = fim - agora;
+    }
+    let h = Math.floor(diff / (1000*60*60));
+    let m = Math.floor((diff % (1000*60*60)) / (1000*60));
+    let s = Math.floor((diff % (1000*60)) / 1000);
+    el.textContent = `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  }, 1000);
+})();
+</script>
 </body>
 </html>
