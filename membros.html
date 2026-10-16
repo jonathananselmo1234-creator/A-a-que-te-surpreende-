@@ -4,45 +4,98 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Área de Membros - Açaí</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#08081a;font-family:Inter,sans-serif;color:#fff;display:flex;justify-content:center}
-.container{width:100%;max-width:480px;padding:20px;z-index:2}
-.box{background:#000;border:1px solid #a855f7;border-radius:14px;padding:20px;text-align:center}
-input{width:100%;padding:16px;border-radius:10px;border:none;margin-top:12px;text-align:center;font-size:18px}
-.btn-acesso{width:100%;margin-top:12px;background:#ffea00;color:#000;font-family:Anton,sans-serif;font-size:20px;padding:16px;border-radius:12px;border:none;cursor:pointer}
-.video-wrap{display:none;margin-top:20px}
-.video-wrap h3{color:#c084fc;font-family:Anton;margin:20px 0 10px;text-align:left}
-video{width:100%;border-radius:12px;border:2px solid #a855f7}
+body{background:#08081a;font-family:'Inter',sans-serif;color:#fff;display:flex;justify-content:center}
+body::before{content:"";position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at top, #2a1a5e 0%, #08081a 60%);z-index:0}
+.container{width:100%;max-width:480px;position:relative;z-index:2;padding:16px}
+.login-box{background:#000;border:2px solid #a855f7;border-radius:16px;padding:24px;text-align:center;margin-top:20px}
+.login-box h2{font-family:'Anton';color:#ffea00;font-size:32px;letter-spacing:1px}
+.login-box p{margin-top:8px;font-weight:700;color:#c084fc}
+.login-box input{width:100%;padding:16px;border-radius:10px;border:1px solid #a855f7;background:#111;color:#fff;margin-top:14px;text-align:center;font-size:18px;font-weight:800}
+.btn{width:100%;margin-top:14px;background:#ffea00;color:#000;font-family:'Anton';font-size:20px;padding:16px;border-radius:12px;border:none;cursor:pointer;box-shadow:0 0 20px rgba(255,234,0,0.5)}
+.conteudo{display:none;margin-top:20px}
+.modulo{background:#000;border:1px solid rgba(168,85,247,0.6);border-radius:14px;padding:16px;margin-bottom:16px}
+.modulo-num{font-family:'Anton';color:#ffea00;font-size:13px;letter-spacing:1px}
+.modulo-title{font-family:'Anton';color:#fff;font-size:20px;margin-top:2px;line-height:1.1}
+.video-box{width:100%;height:260px;background:#111;border-radius:10px;margin-top:12px;display:flex;align-items:center;justify-content:center;border:1px dashed #a855f7;color:#9ca3af;font-weight:700}
+video{width:100%;border-radius:10px;margin-top:12px;border:1px solid #a855f7}
+.tag-bonus{background:#60a5fa;color:#000;font-weight:900;font-size:11px;padding:4px 8px;border-radius:20px;display:inline-block;margin-top:6px}
 </style>
 </head>
 <body>
 <div class="container">
-  <div class="box">
-    <h2 style="font-family:Anton;color:#ffea00">ÁREA DE MEMBROS</h2>
-    <p style="margin-top:8px;font-weight:700">Digite a senha ACAI87</p>
+  
+  <div class="login-box" id="login">
+    <h2>ÁREA DE MEMBROS</h2>
+    <p>Digite a senha: ACAI87</p>
     <input type="password" id="senha" placeholder="ACAI87">
-    <button class="btn-acesso" onclick="entrar()">LIBERAR ACESSO</button>
+    <button class="btn" onclick="entrar()">LIBERAR ACESSO</button>
+    <p style="font-size:12px;color:#9ca3af;margin-top:12px;font-weight:600">Suporte: WhatsApp</p>
   </div>
 
-  <div id="conteudo" class="video-wrap">
-    <h3>Módulo 1 - Base Cremosa (Base do seu lucro)</h3>
-    <video src="video3.mp4" controls></video>
+  <div id="aulas" class="conteudo">
+    
+    <div style="text-align:center;padding:10px 0 20px">
+      <h2 style="font-family:Anton;color:#c084fc;font-size:28px">AÇAÍ QUE TE SURPREENDE</h2>
+      <p style="color:#4ade80;font-weight:800;margin-top:4px">7 Módulos Liberados</p>
+    </div>
 
-    <h3>Módulo 2 - Creme de Cupuaçu</h3>
-    <video src="cupuacu.mp4" controls></video>
+    <div class="modulo">
+      <div class="modulo-num">MÓDULO 1</div>
+      <div class="modulo-title">Introdução ao açaí, marcas e fornecedores</div>
+      <video src="modulo1.mp4" controls poster="IMG-20261016-WA0716.jpg"></video>
+    </div>
 
-    <h3>Módulo 3 - Copo da Felicidade + 7 Receitas</h3>
-    <video src="copo.mp4" controls></video>
+    <div class="modulo">
+      <div class="modulo-num">MÓDULO 2</div>
+      <div class="modulo-title">Materiais e fazendo açaí na prática</div>
+      <video src="modulo2.mp4" controls></video>
+    </div>
+
+    <div class="modulo">
+      <div class="modulo-num">MÓDULO 3</div>
+      <div class="modulo-title">Criando rede social, iFood e CNPJ</div>
+      <video src="modulo3.mp4" controls></video>
+    </div>
+
+    <div class="modulo">
+      <div class="modulo-num">MÓDULO 4</div>
+      <div class="modulo-title">Estratégia para venda de açaí</div>
+      <video src="modulo4.mp4" controls></video>
+    </div>
+
+    <div class="modulo">
+      <div class="modulo-num">MÓDULO 5</div>
+      <div class="modulo-title">Cupuaçu e Copo da Felicidade</div>
+      <video src="modulo5.mp4" controls></video>
+    </div>
+
+    <div class="modulo" style="border-color:#60a5fa">
+      <div class="modulo-num" style="color:#60a5fa">MÓDULO 6 <span class="tag-bonus">BÔNUS</span></div>
+      <div class="modulo-title">Bônus - 7 receitas caseiras que vão te ajudar a vender muito</div>
+      <video src="modulo6.mp4" controls></video>
+    </div>
+
+    <div class="modulo" style="border-color:#ffea00">
+      <div class="modulo-num" style="color:#ffea00">MÓDULO 7 <span class="tag-bonus" style="background:#ffea00">BÔNUS ESPECIAL</span></div>
+      <div class="modulo-title">Doces Caseiros para vender ou para sua família</div>
+      <video src="modulo7.mp4" controls></video>
+    </div>
+
+    <p style="text-align:center;color:#9ca3af;font-size:11px;margin:30px 0">© 2026 Açaí que te Surpreende • Acesso Vitalício</p>
+
   </div>
 </div>
 
 <script>
 function entrar(){
-  if(document.getElementById('senha').value == "ACAI87"){
-    document.getElementById('conteudo').style.display="block";
-    window.scrollTo(0,300);
-  } else { alert("Senha errada! É ACAI87"); }
+  if(document.getElementById('senha').value.toUpperCase() == "ACAI87"){
+    document.getElementById('login').style.display="none";
+    document.getElementById('aulas').style.display="block";
+    window.scrollTo(0,0);
+  } else { alert("Senha errada! Digite ACAI87"); }
 }
 </script>
 </body>
