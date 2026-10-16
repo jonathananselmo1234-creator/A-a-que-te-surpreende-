@@ -1,102 +1,56 @@
-<!-- COMEÇA A COPIAR DAQUI -->
-
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O AÇAÍ QUE TE SURPREENDE</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@600;800&display=swap" rel="stylesheet">
 <style>
-  .caixa-bonus {
-    background: #0f172a;
-    border: 2px dashed #FFCC00;
-    border-radius: 16px;
-    padding: 25px;
-    margin: 25px 0;
-  }
-  .destaque-azul {
-    color: #00BFFF;
-    font-weight: bold;
-  }
-  .titulo-amarelo {
-    color: #FFCC00;
-    font-size: 32px;
-    font-weight: 900;
-    text-align: center;
-    text-transform: uppercase;
-    line-height: 1.2;
-  }
-  .subtitulo-branco {
-    color: #ffffff;
-    font-size: 20px;
-    text-align: center;
-    line-height: 1.4;
-  }
-  .texto-corpo {
-    color: #e2e8f0;
-    font-size: 18px;
-    line-height: 1.6;
-  }
-  .botao-piscando {
-    background: #FFCC00;
-    color: #000;
-    font-size: 22px;
-    font-weight: 900;
-    padding: 18px 30px;
-    border-radius: 50px;
-    text-align: center;
-    display: block;
-    text-decoration: none;
-    margin: 30px auto;
-    animation: piscar 1.5s infinite;
-  }
-  @keyframes piscar {
-    0% { transform: scale(1); box-shadow: 0 0 0px #FFCC00; }
-    50% { transform: scale(1.05); box-shadow: 0 0 25px #FFCC00; }
-    100% { transform: scale(1); box-shadow: 0 0 0px #FFCC00; }
-  }
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a18;font-family:'Inter',sans-serif;color:#fff;display:flex;justify-content:center}
+.container{width:100%;max-width:480px;background:linear-gradient(180deg,#10102a 0%,#0a0e1f 100%);padding:24px 20px 40px}
+.title{font-family:'Anton',sans-serif;font-size:54px;line-height:0.9;color:#a78bfa;text-transform:uppercase;margin-top:10px}
+.subtitle{font-family:'Anton',sans-serif;color:#ffea00;font-size:26px;margin-top:18px;margin-bottom:28px}
+.card{background:rgba(255,255,255,0.04);border:1px solid rgba(167,139,250,0.4);border-radius:16px;padding:18px 16px;display:flex;gap:12px}
+.card p{font-size:18px;font-weight:600}
+.section-title{font-family:'Anton',sans-serif;color:#22d3ee;font-size:38px;margin-top:36px;margin-bottom:18px}
+.list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.list li{font-size:17px;font-weight:700;display:flex;gap:8px}
+.bonus-title{font-family:'Anton',sans-serif;color:#60a5fa;font-size:42px;margin-top:36px;margin-bottom:18px}
+.bonus-box{background:rgba(255,255,255,0.04);border:1px solid rgba(96,165,250,0.5);border-radius:14px;padding:16px}
+.highlight-yellow{color:#ffea00;font-weight:900}
+.bonus-text{font-size:17px;line-height:1.45;font-weight:600;margin-top:16px}
+.green{color:#4ade80;font-size:20px;font-weight:900;margin-top:20px}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,234,0,0.7)}50%{box-shadow:0 0 0 14px rgba(255,234,0,0)}100%{box-shadow:0 0 0 0 rgba(255,234,0,0)}}
+.btn{background:#ffea00;color:#0a0a18;font-family:'Anton',sans-serif;font-size:22px;padding:18px 22px;width:100%;border-radius:14px;border:none;cursor:pointer;text-transform:uppercase;animation:pulse 1.5s infinite}
+.small{margin-top:14px;font-size:13px;color:#9ca3af;text-align:center}
 </style>
-
-<div style="background:#020617; padding: 30px 20px; border-radius:20px;">
-
-  <h1 class="titulo-amarelo">LUCRANDO COM AÇAÍ</h1>
-  
-  <p class="subtitulo-branco">
-    Vou te mostrar como começar a vender <span class="destaque-azul">do conforto da sua casa</span> e faturar até <span style="color:#FFCC00; font-weight:bold;">R$ 4.000 por mês.</span>
-  </p>
-
-  <p class="texto-corpo" style="text-align:center;">
-    Seja uma renda extra aos fins de semana ou sua renda fixa. E o melhor: <b>100% de casa, sem precisar de loja física.</b>
-  </p>
-
-  <hr style="border-color:#1e293b; margin:30px 0;">
-
-  <h2 class="titulo-amarelo" style="font-size:26px;">EU JÁ PASSEI POR ISSO</h2>
-  
-  <p class="texto-corpo">
-    Eu comecei a vender açaí em <span class="destaque-azul">2020, onde fiz meus primeiros R$ 4.000 em vendas</span> direto da minha casa.
-    <br><br>
-    Foi aí que eu percebi: o açaí é uma <b style="color:#FFCC00;">mina de ouro</b>. Se você souber trabalhar do jeito certo, pode faturar até MAIS de R$ 4.000 por mês.
-    <br><br>
-    Pra você ter ideia, hoje o açaí é uma das minhas principais fontes de renda, mesmo com concorrência.
-  </p>
-
-  <div class="caixa-bonus">
-    <h2 class="titulo-amarelo" style="font-size:24px;">E NÃO PARA POR AÍ...</h2>
-    <p class="texto-corpo" style="text-align:center;">
-      Além do açaí, vou te mostrar como ampliar seu negócio e lucrar ainda mais com:
-    </p>
-    <p style="color:#fff; font-size:20px; font-weight:bold; text-align:center; line-height:1.8;">
-      <span style="color:#FFCC00;">✓</span> COPO DA FELICIDADE <br>
-      <span style="color:#FFCC00;">✓</span> <span class="destaque-azul">BÔNUS: 7 RECEITAS CASEIRAS LUCRATIVAS</span>
-    </p>
-    <p class="texto-corpo" style="text-align:center; font-size:16px;">
-      Pão caseiro, Bolo de chuva, Bolo de milho, Bolo de chocolate, Pastel, Risoles + 1 receita surpresa para você ter um cardápio completo.
-    </p>
-  </div>
-
-  <a href="SEU LINK DA KIWIFY AQUI" class="botao-piscando">
-    QUERO COMEÇAR AGORA →
-  </a>
-
-  <p style="color:#94a3b8; text-align:center; font-size:14px;">
-    KIT COMPLETO POR APENAS R$ 97 - Acesso Vitalício
-  </p>
-
+</head>
+<body>
+<div class="container">
+<div class="title">O AÇAÍ QUE TE<br>SURPREENDE</div>
+<div class="subtitle">Eu me chamo Natanael Anselmo</div>
+<div class="card"><p>Comecei meu negócio de açaí em 2020, riram de mim, depois 2 meses faturando R$ 4.000 em casa.</p></div>
+<div class="section-title">O QUE VOCÊ VAI APRENDER</div>
+<ul class="list">
+<li>• Como conseguir lucro</li>
+<li>• Como fazer as montagens de açaí</li>
+<li>• Como produzir diferentes tipos de açaí</li>
+<li>• Como precificar o meu açaí</li>
+<li>• Como criar as minhas redes sociais voltadas apenas para isso</li>
+<li>• Como impulsionar as minhas redes sociais para aumentar as minhas vendas</li>
+<li>• Como criar o seu CNPJ do zero</li>
+<li>• Como vincular a iFood</li>
+<li>• Como usar um moto Uber ou criar parceria com Ubers</li>
+<li>• Qual açaí vender</li>
+<li>• Como criar promoções para popularizar a minha marca</li>
+</ul>
+<div class="bonus-title">BÔNUS EXCLUSIVO</div>
+<div class="bonus-box"><p>Você ainda aprende a fazer o <span class="highlight-yellow">'COPO DA FELICIDADE'</span> e como colocar ele no seu negócio pra alavancar o seu repertório de venda.</p></div>
+<p class="bonus-text">A gente preparou <span class="highlight-yellow" style="text-decoration:underline">'SETE RECEITAS CASEIRAS'</span> para agregar e fortalecer o seu negócio que mais vendem atualmente no Brasil: pão caseiro, pastel, bolo de chocolate, bolo de chuva, receitas simples, mas que vão te trazer um alto faturamento.</p>
+<p class="bonus-text">Essa é a maior oportunidade de você criar a sua loja de casa mesmo, trabalhando de casa e faturando muito, sem promessas falsas. Você será seu próprio chefe.</p>
+<p class="green">Você será seu próprio chefe, sem depender de patrão.</p>
+<div style="margin-top:28px"><button class="btn" onclick="window.location.href='#checkout'">QUERO COMEÇAR AGORA</button><div class="small">Acesso imediato • Garantia de 7 dias</div></div>
 </div>
-
-<!-- TERMINA AQUI -->
+</body>
+</html>
