@@ -4,97 +4,73 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Área de Membros - Açaí que te Surpreende</title>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#08081a;font-family:'Inter',sans-serif;color:#fff}
-.container{max-width:700px;margin:0 auto;padding:20px}
+body{background:#0a0a1a;color:#fff;font-family:Arial,sans-serif}
 .login{height:100vh;display:flex;justify-content:center;align-items:center;padding:20px}
-.login-box{background:#111;border:2px solid #ffea00;border-radius:16px;padding:30px;width:100%;max-width:400px;text-align:center}
-.login-box h1{font-family:Anton;color:#ffea00;font-size:30px;letter-spacing:1px}
-.login-box input{width:100%;padding:14px;border-radius:10px;border:none;margin-top:16px;font-size:16px;background:#222;color:#fff}
-.login-box button{width:100%;padding:14px;margin-top:14px;background:#ffea00;color:#000;font-weight:900;border-radius:10px;border:none;font-size:16px;cursor:pointer}
-#area{display:none}
-.top{background:linear-gradient(90deg,#a855f7,#ffea00);padding:20px;border-radius:16px;text-align:center;margin-bottom:24px}
-.top h1{font-family:Anton;color:#000;font-size:26px}
-.top p{color:#000;font-weight:800;margin-top:4px}
-.modulo{background:rgba(255,255,255,0.06);border:1px solid rgba(168,85,247,0.4);border-radius:16px;padding:18px;margin-top:20px}
-.modulo h2{font-family:Anton;font-size:20px;margin-bottom:12px}
-.modulo-1 h2{color:#fff}
-.modulo-2 h2{color:#c084fc}
-.modulo-3 h2{color:#ffea00}
-.modulo-4 h2{color:#4ade80}
-.modulo-5 h2{color:#fb7185}
-.aula{background:#000;border-radius:12px;padding:14px;margin-top:12px}
-.aula p{font-weight:800;font-size:14px;color:#ffea00;margin-bottom:8px}
-.aula span{font-size:12px;color:#aaa;font-weight:400}
-video{width:100%;border-radius:10px;background:#111}
+.box{background:#151528;border:2px solid #ffea00;border-radius:16px;padding:28px;width:100%;max-width:380px;text-align:center}
+.box h1{color:#ffea00;font-size:26px}
+.box input{width:100%;padding:14px;border-radius:10px;border:none;margin-top:14px;background:#222;color:#fff;font-size:16px}
+.box button{width:100%;padding:14px;margin-top:14px;background:#ffea00;color:#000;font-weight:900;border-radius:10px;border:none;font-size:16px}
+#site{display:none;max-width:700px;margin:0 auto;padding:16px}
+.topo{background:#ffea00;color:#000;padding:16px;border-radius:14px;text-align:center;font-weight:900;font-size:20px;margin-bottom:20px}
+.mod{background:rgba(255,255,255,0.07);border:1px solid #444;border-radius:14px;padding:16px;margin-top:18px}
+.mod h2{font-size:18px;margin-bottom:12px}
+.mod-3{border-color:#ffea00}.mod-3 h2{color:#ffea00}
+.aula{background:#000;border-radius:10px;padding:12px;margin-top:10px}
+.aula p{color:#ffea00;font-weight:700;font-size:14px;margin-bottom:8px}
+video{width:100%;border-radius:8px;background:#000}
 </style>
 </head>
 <body>
 
 <div class="login" id="login">
-  <div class="login-box">
-    <h1>ÁREA DE MEMBROS</h1>
-    <p style="margin-top:8px;color:#aaa;font-size:13px">Digite a senha que recebeu na compra</p>
-    <input type="password" id="senha" placeholder="Sua senha">
-    <button onclick="entrar()">ENTRAR NO CURSO</button>
-  </div>
+<div class="box">
+<h1>ÁREA DE MEMBROS</h1>
+<p style="color:#aaa;font-size:13px;margin-top:6px">Digite sua senha</p>
+<input type="password" id="senha" placeholder="Senha">
+<button onclick="entrar()">ENTRAR</button>
+<p style="color:#666;font-size:11px;margin-top:10px">Senha de teste: ACAI87</p>
+</div>
 </div>
 
-<div class="container" id="area">
-  <div class="top">
-    <h1>🍧 AÇAÍ QUE TE SURPREENDE</h1>
-    <p>Seja bem-vinda! Seu acesso completo abaixo</p>
-  </div>
+<div id="site">
+<div class="topo">🍧 AÇAÍ QUE TE SURPREENDE</div>
 
-  <div class="modulo modulo-1">
-    <h2>MÓDULO 1 - APRESENTAÇÃO</h2>
-    <div class="aula"><p>Boas-vindas e como funciona o curso</p><video controls><source src="m1-apresentacao.mp4" type="video/mp4"></video><span>Assista primeiro essa aula</span></div>
-  </div>
+<div class="mod">
+<h2>MÓDULO 1 - APRESENTAÇÃO</h2>
+<div class="aula"><p>Boas-vindas</p><video controls src="video1.mp4"></video></div>
+</div>
 
-  <div class="modulo modulo-2">
-    <h2>MÓDULO 2 - PRODUTOS E FORNECEDORES</h2>
-    <div class="aula"><p>Aula 1 - Quais produtos comprar</p><video controls><source src="m2-produtos.mp4" type="video/mp4"></video></div>
-    <div class="aula"><p>Aula 2 - Onde achar fornecedores baratos</p><video controls><source src="m2-fornecedores.mp4" type="video/mp4"></video></div>
-  </div>
+<div class="mod">
+<h2>MÓDULO 2 - PRODUTOS E FORNECEDORES</h2>
+<div class="aula"><p>Produtos</p><video controls src="video2.mp4"></video></div>
+</div>
 
-  <div class="modulo modulo-3">
-    <h2>MÓDULO 3 - NA PRÁTICA: MONTAGENS</h2>
-    <div class="aula"><p>Aula 1 - Montagem de Açaí que vende</p><video controls><source src="m3-acai.mp4" type="video/mp4"></video></div>
-    <div class="aula"><p>Aula 2 - Creme de Cupuaçu Cremoso</p><video controls><source src="m3-cupuacu.mp4" type="video/mp4"></video></div>
-    <div class="aula"><p>Aula 3 - Copo da Felicidade + Cupuaçu</p><video controls><source src="m3-copo.mp4" type="video/mp4"></video></div>
-  </div>
+<div class="mod mod-3">
+<h2>MÓDULO 3 - NA PRÁTICA</h2>
+<div class="aula"><p>Açaí que vende</p><video controls src="video3.mp4"></video></div>
+<div class="aula"><p>Creme de Cupuaçu</p><video controls src="cupuacu.mp4"></video></div>
+<div class="aula"><p>Copo da Felicidade + Cupuaçu</p><video controls src="copo.mp4"></video></div>
+</div>
 
-  <div class="modulo modulo-4">
-    <h2>MÓDULO 4 - VENDAS E DIVULGAÇÃO</h2>
-    <div class="aula"><p>Aula 1 - Como abrir CNPJ / MEI</p><video controls><source src="m4-mei.mp4" type="video/mp4"></video></div>
-    <div class="aula"><p>Aula 2 - Criando conta no iFood do zero</p><video controls><source src="m4-ifood.mp4" type="video/mp4"></video></div>
-    <div class="aula"><p>Aula 3 - Instagram, Facebook e WhatsApp que vende</p><video controls><source src="m4-redes.mp4" type="video/mp4"></video></div>
-    <div class="aula"><p>Aula 4 - Como impulsionar e colocar dinheiro pra vender mais</p><video controls><source src="m4-trafego.mp4" type="video/mp4"></video></div>
-  </div>
+<div class="mod">
+<h2>MÓDULO 4 - VENDAS E DIVULGAÇÃO</h2>
+<div class="aula"><p>iFood / Instagram / Tráfego</p><video controls src="video4.mp4"></video></div>
+</div>
 
-  <div class="modulo modulo-5">
-    <h2>MÓDULO 5 - BÔNUS: 7 RECEITAS CASEIRAS</h2>
-    <div class="aula"><p>Receita 1 a 7 - Receitas que mais vendem</p><video controls><source src="m5-receitas.mp4" type="video/mp4"></video></div>
-    <div class="aula"><p>PDF com as 7 receitas (material de apoio)</p><a href="receitas.pdf" target="_blank" style="color:#ffea00;font-weight:800;text-decoration:none">📄 BAIXAR PDF DAS RECEITAS</a></div>
-  </div>
-
-  <p style="text-align:center;color:#555;font-size:12px;margin:30px 0">Dúvidas? Chama no WhatsApp de suporte</p>
+<div class="mod">
+<h2>MÓDULO 5 - BÔNUS: 7 RECEITAS CASEIRAS</h2>
+<div class="aula"><p>Receitas</p><video controls src="video5.mp4"></video></div>
+</div>
 </div>
 
 <script>
 function entrar(){
-  if(document.getElementById('senha').value==='ACAI87'){
-    document.getElementById('login').style.display='none';
-    document.getElementById('area').style.display='block';
-  }else{alert('Senha errada! Use ACAI87')}
-}
-window.onload=function(){
-  if(new URLSearchParams(window.location.search).get('acesso')==='ACAI87'){
-    document.getElementById('login').style.display='none';
-    document.getElementById('area').style.display='block';
-  }
+if(document.getElementById('senha').value==='ACAI87'){
+document.getElementById('login').style.display='none';
+document.getElementById('site').style.display='block';
+}else{alert('Senha errada');}
 }
 </script>
 </body>
