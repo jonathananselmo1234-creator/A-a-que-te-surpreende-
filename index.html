@@ -15,9 +15,9 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 .hero-photo{width:100%;height:540px;object-fit:cover;object-position:top;border-radius:18px;display:block;border:2px solid rgba(168,85,247,0.5)}
 .title{font-family:'Anton',sans-serif;font-size:42px;line-height:0.95;text-transform:uppercase;color:#c084fc;padding:20px 20px 0}
 .subtitle{font-family:'Anton',sans-serif;color:#ffea00;font-size:21px;padding:12px 20px 0}
-.card{background:#000000;border:1px solid #333;border-radius:14px;padding:18px;margin:18px 20px}
+.card{background:#000000;border:1px solid rgba(168,85,247,0.6);border-radius:14px;padding:18px;margin:18px 20px}
 .card p{font-size:16.5px;line-height:1.6;font-weight:800;color:#ffffff}
-.section-title{font-family:'Anton',sans-serif;color:#a855f7;font-size:30px;margin:28px 20px 0;padding-bottom:6px;border-bottom:3px solid #a855f7;display:inline-block}
+.section-title{font-family:'Anton',sans-serif;color:#c084fc;font-size:30px;margin:28px 20px 0;padding-bottom:6px;border-bottom:3px solid #a855f7;display:inline-block;text-transform:uppercase}
 .list{list-style:none;padding:16px 20px;display:flex;flex-direction:column;gap:12px}
 .list li{font-size:15px;font-weight:700;display:flex;gap:10px;align-items:center}
 .list li span{color:#4ade80;font-size:18px}
@@ -26,14 +26,20 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 .bonus-box p{font-weight:700;line-height:1.4}
 .yellow{color:#ffea00;font-weight:900}
 .bonus-highlight{background:#ffea00;color:#000;border-radius:14px;padding:16px;margin:22px 20px;text-align:center;font-weight:900;font-size:16px}
-.green{color:#4ade80;font-size:18px;font-weight:900;text-align:center;padding:0 20px;margin-top:20px}
-.btn{width:calc(100% - 40px);margin:24px 20px 0;background:#ffea00;color:#000;font-family:'Anton',sans-serif;font-size:22px;padding:20px;border-radius:16px;border:none;cursor:pointer;box-shadow:0 0 30px rgba(255,234,0,0.6);animation:pisca 1.2s infinite}
-@keyframes pisca{0%,100%{transform:scale(1)}50%{transform:scale(1.03);box-shadow:0 0 45px rgba(255,234,0,1)}}
+.green{color:#4ade80;font-size:18px;font-weight:900;text-align:center;padding:0 20px;margin-top:20px;line-height:1.3}
+.price-box{background:rgba(255,255,255,0.06);border:2px solid #ffea00;border-radius:16px;padding:20px;margin:26px 20px 0;text-align:center}
+.price-de{color:#9ca3af;font-size:16px;text-decoration:line-through}
+.price-por{color:#fff;font-size:16px;margin-top:6px;font-weight:700}
+.price-valor{color:#ffea00;font-family:'Anton',sans-serif;font-size:56px;line-height:1;margin-top:4px}
+.price-parcela{color:#4ade80;font-size:14px;font-weight:800;margin-top:6px}
+.btn{width:calc(100% - 40px);margin:18px 20px 0;background:#ffea00;color:#000;font-family:'Anton',sans-serif;font-size:22px;padding:20px;border-radius:16px;border:none;cursor:pointer;letter-spacing:0.5px;box-shadow:0 0 30px rgba(255,234,0,0.6);animation:pisca 1.2s infinite}
+@keyframes pisca{0%,100%{transform:scale(1);box-shadow:0 0 25px rgba(255,234,0,0.6)}50%{transform:scale(1.05);box-shadow:0 0 45px rgba(255,234,0,1);background:#fff000}}
+.btn:active{transform:scale(0.97)}
 .garantia{background:rgba(255,255,255,0.08);border:2px dashed #4ade80;border-radius:14px;padding:18px;margin:24px 20px;display:flex;gap:14px;align-items:center}
 .garantia-icone{font-size:42px}
 .garantia p{font-size:14px;font-weight:700;line-height:1.4}
 .garantia strong{color:#4ade80;font-size:16px}
-.small{color:#9ca3af;font-size:11px;text-align:center;margin-top:14px;padding-bottom:40px}
+.small{color:#9ca3af;font-size:11px;text-align:center;margin-top:14px;padding-bottom:40px;line-height:1.4}
 </style>
 </head>
 <body>
@@ -44,31 +50,4 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 <div class="title">LUCRE NESSE VERÃO ENTRE R$ 600 A R$ 5000</div>
 <div class="subtitle">Eu me chamo Natanael Anselmo</div>
 <div class="card">
-<p>Quando comecei meu negócio de açaí, ninguém acreditou... 2 meses depois eu estava faturando <span class="yellow">5 mil reais</span> do conforto da minha casa. Nesse curso eu quero te mostrar que é <span class="yellow">100% possível</span> você fazer o mesmo.</p>
-</div>
-<div class="section-title">O QUE VOCÊ VAI APRENDER</div>
-<ul class="list">
-<li><span>✓</span> Como conseguir lucro</li>
-<li><span>✓</span> Como fazer as montagens de açaí</li>
-<li><span>✓</span> Como produzir diferentes tipos de açaí</li>
-<li><span>✓</span> Como precificar</li>
-<li><span>✓</span> Como criar redes sociais</li>
-<li><span>✓</span> Como impulsionar vendas</li>
-<li><span>✓</span> Como criar CNPJ</li>
-<li><span>✓</span> Como vincular iFood</li>
-</ul>
-<div class="bonus-title">BÔNUS EXCLUSIVO</div>
-<div class="bonus-box">
-<p>Você ainda aprende a fazer o <span class="yellow">COPO DA FELICIDADE</span> + <span class="yellow">7 RECEITAS CASEIRAS</span> que vão fazer seus clientes ficarem loucos!</p>
-</div>
-<div class="bonus-highlight">🎁 BÔNUS: COPO DA FELICIDADE + 7 RECEITAS</div>
-<p class="green">Você será seu próprio chefe sem depender de patrão.</p>
-<button class="btn" onclick="window.location.href='https://pay.kiwify.com.br/SEU-LINK-AQUI'">QUERO COMEÇAR AGORA</button>
-<div class="garantia">
-<div class="garantia-icone">🛡️</div>
-<p><strong>7 DIAS DE GARANTIA TOTAL</strong><br>Se em 7 dias você não gostar, devolvemos 100% do seu dinheiro. Risco ZERO.</p>
-</div>
-<div class="small">Acesso imediato • Garantia de 7 dias • Suporte no WhatsApp<br>© 2026 Açaí que te Surpreende</div>
-</div>
-</body>
-</html>
+<p>Quando comecei meu negócio de açaí, ninguém acreditou... 2 meses depois eu estava faturando <span class="yellow
