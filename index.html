@@ -3,68 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title><div class="title">COMECE AINDA NESSE VERÃO A LUCRAR DE 600 A 5 MIL REAIS</div>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@600;800;900&display=swap" rel="stylesheet">
+<title>Lucrando com Açaí</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#08081a;font-family:'Inter',sans-serif;color:#fff;display:flex;justify-content:center;position:relative}
-body::before{content:"";position:fixed;top:0;left:0;width:100%;height:100%;background-image:url('IMG-20261014-WA4791.jpg');background-size:cover;background-position:center top;background-repeat:no-repeat;opacity:0.15;z-index:-2;pointer-events:none}
-body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(180deg, rgba(8,8,26,0.78) 0%, rgba(10,10,31,0.92) 100%);z-index:-1}
-.container{width:100%;max-width:480px;position:relative;z-index:1;padding-bottom:40px}
+body{background:#08081a;font-family:'Inter',sans-serif;color:#fff;display:flex;justify-content:center;overflow-x:hidden}
+body::before{content:"";position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at top, #2a1a5e 0%, #08081a 60%);z-index:0}
+body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;background-image:radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px);background-size:30px 30px;opacity:0.3;z-index:0;pointer-events:none}
+.container{width:100%;max-width:480px;position:relative;z-index:2}
 .hero-wrap{padding:16px 16px 0}
-.hero-photo{width:100%;height:520px;object-fit:cover;border-radius:22px;border:5px solid #ffea00;display:block;box-shadow:0 0 20px #ffea00,0 0 50px rgba(168,85,247,0.5),0 12px 30px rgba(0,0,0,0.6)}
-.title{font-family:'Anton',sans-serif;font-size:56px;line-height:0.9;color:#a855f7;padding:20px 20px 0;text-transform:uppercase}
-.subtitle{font-family:'Anton',sans-serif;color:#ffea00;font-size:24px;padding:12px 20px 0}
+.hero-photo{width:100%;height:540px;object-fit:cover;object-position:top;border-radius:18px;display:block;border:2px solid rgba(168,85,247,0.5)}
+.title{font-family:'Anton',sans-serif;font-size:36px;line-height:0.95;text-transform:uppercase;color:#c084fc;padding:20px 20px 0;letter-spacing:0.5px}
+.subtitle{font-family:'Anton',sans-serif;color:#ffea00;font-size:21px;padding:12px 20px 0}
 .card{background:rgba(255,255,255,0.08);backdrop-filter:blur(8px);border:1px solid rgba(168,85,247,0.4);border-radius:14px;padding:18px;margin:18px 20px}
-.card p{font-size:16.5px;line-height:1.55;font-weight:600}
-.section-title{font-family:'Anton',sans-serif;color:#fff;font-size:28px;margin:26px 20px 0;padding-bottom:6px;border-bottom:3px solid #a855f7;display:inline-block}
-.list{list-style:none;padding:16px 20px;display:flex;flex-direction:column;gap:11px}
-.list li{font-size:15.5px;font-weight:700;display:flex;gap:8px}
-.list li span{color:#4ade80}
-.bonus-title{font-family:'Anton',sans-serif;color:#60a5fa;font-size:38px;margin:30px 20px 0}
-.bonus-box{background:rgba(255,255,255,0.08);backdrop-filter:blur(8px);border:1px solid rgba(96,165,250,0.5);border-radius:14px;padding:18px;margin:14px 20px}
+.card p{font-size:16px;line-height:1.55;font-weight:600}
+.section-title{font-family:'Anton',sans-serif;color:#fff;font-size:26px;margin:28px 20px 0;padding-bottom:6px;border-bottom:3px solid #a855f7;display:inline-block}
+.list{list-style:none;padding:16px 20px;display:flex;flex-direction:column;gap:12px}
+.list li{font-size:15px;font-weight:700;display:flex;gap:10px;align-items:center}
+.list li span{color:#4ade80;font-size:18px}
+.bonus-title{font-family:'Anton',sans-serif;color:#60a5fa;font-size:32px;margin:32px 20px 0}
+.bonus-box{background:rgba(255,255,255,0.08);border:1px solid rgba(96,165,250,0.5);border-radius:14px;padding:18px;margin:14px 20px}
+.bonus-box p{font-weight:700;line-height:1.4}
 .yellow{color:#ffea00;font-weight:900}
-.yellow-underline{color:#ffea00;font-weight:900;text-decoration:underline}
-.bonus-highlight{background:#ffea00;color:#000;border-radius:14px;padding:16px;margin:22px 20px;text-align:center;font-weight:900;font-size:15px;box-shadow:0 0 20px rgba(255,234,0,0.6)}
-.green{color:#4ade80;font-size:18px;font-weight:900;text-align:center;padding:0 20px;margin-top:18px}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,234,0,0.9)}50%{box-shadow:0 0 0 18px rgba(255,234,0,0)}100%{box-shadow:0 0 0 0 rgba(255,234,0,0)}}
-.btn{width:calc(100% - 40px);margin:22px 20px 0;background:#ffea00;color:#000;font-family:'Anton',sans-serif;font-size:22px;padding:20px;border-radius:16px;border:none;animation:pulse 1.6s infinite;cursor:pointer;text-transform:uppercase}
-.small{color:#9ca3af;font-size:12px;text-align:center;margin-top:12px}
+.bonus-highlight{background:#ffea00;color:#000;border-radius:14px;padding:16px;margin:22px 20px;text-align:center;font-weight:900;font-size:16px}
+.green{color:#4ade80;font-size:18px;font-weight:900;text-align:center;padding:0 20px;margin-top:20px;line-height:1.3}
+.btn{width:calc(100% - 40px);margin:24px 20px 0;background:#ffea00;color:#000;font-family:'Anton',sans-serif;font-size:21px;padding:20px;border-radius:16px;border:none;cursor:pointer;letter-spacing:0.5px;box-shadow:0 0 25px rgba(255,234,0,0.4);transition:0.2s}
+.btn:active{transform:scale(0.97)}
+.small{color:#9ca3af;font-size:11px;text-align:center;margin-top:14px;padding-bottom:40px;line-height:1.4}
 </style>
 </head>
 <body>
 <div class="container">
+
 <div class="hero-wrap">
-<img src="IMG-20261016-WA0716.jpg" class="hero-photo" alt="Natanael">
+<img src="IMG-20261014-WA4791.jpg" class="hero-photo" alt="Açaí que te surpreende">
 </div>
-<div class="title">LUCRANDO COM AÇAÍ</div>
+
+<div class="title">COMECE AINDA NESSE VERÃO A LUCRAR DE SEISCENTOS A CINCO MIL REAIS</div>
+
 <div class="subtitle">Eu me chamo Natanael Anselmo</div>
+
 <div class="card">
-<p>Quando comecei meu negócio de açaí, ninguém acreditou que iria dar certo, nem mesmo meus amigos e família, riram de mim, 2 meses depois eu estava faturando 5 mil reais do conforto da minha casa, deixando todos em choque, nesse curso eu quero te mostrar que é 100% possível você fazer o mesmo.</p>
+<p>Quando comecei meu negócio de açaí, ninguém acreditou... 2 meses depois eu estava faturando 5 mil reais do conforto da minha casa. Nesse curso eu quero te mostrar que é 100% possível você fazer o mesmo.</p>
 </div>
+
 <div class="section-title">O QUE VOCÊ VAI APRENDER</div>
 <ul class="list">
 <li><span>✓</span> Como conseguir lucro</li>
 <li><span>✓</span> Como fazer as montagens de açaí</li>
 <li><span>✓</span> Como produzir diferentes tipos de açaí</li>
-<li><span>✓</span> Como precificar o meu açaí</li>
-<li><span>✓</span> Como criar as minhas redes sociais voltadas apenas para isso</li>
-<li><span>✓</span> Como impulsionar as minhas redes sociais para aumentar as minhas vendas</li>
-<li><span>✓</span> Como criar o seu CNPJ do zero</li>
-<li><span>✓</span> Como vincular a iFood</li>
-<li><span>✓</span> Como usar um moto Uber ou criar parceria com Ubers</li>
-<li><span>✓</span> Qual açaí vender</li>
-<li><span>✓</span> Como criar promoções para popularizar a minha marca</li>
+<li><span>✓</span> Como precificar</li>
+<li><span>✓</span> Como criar redes sociais</li>
+<li><span>✓</span> Como impulsionar vendas</li>
+<li><span>✓</span> Como criar CNPJ</li>
+<li><span>✓</span> Como vincular iFood</li>
 </ul>
+
 <div class="bonus-title">BÔNUS EXCLUSIVO</div>
 <div class="bonus-box">
-<p>Você ainda aprende a fazer o <span class="yellow">COPO DA FELICIDADE</span> e como colocar ele no seu negócio pra alavancar o seu repertório de venda.</p>
-<p style="margin-top:14px">A gente preparou <span class="yellow-underline">SETE RECEITAS CASEIRAS</span> para agregar e fortalecer o seu negócio que mais vendem atualmente no Brasil: pão caseiro, pastel, bolo de chocolate, bolo de chuva, receitas simples que vão agregar no seu negócio e te ajudar a ter ainda mais lucro.</p>
+<p>Você ainda aprende a fazer o <span class="yellow">COPO DA FELICIDADE</span> + <span class="yellow">7 RECEITAS CASEIRAS</span> que vão fazer seus clientes ficarem loucos!</p>
 </div>
-<div class="bonus-highlight">🎁 BÔNUS EXCLUSIVO: COPO DA FELICIDADE + 7 RECEITAS CASEIRAS</div>
+
+<div class="bonus-highlight">🎁 BÔNUS: COPO DA FELICIDADE + 7 RECEITAS</div>
+
 <p class="green">Você será seu próprio chefe sem depender de patrão.</p>
-<button class="btn" onclick="window.location.href='https://SEU-LINK-AQUI.com'">QUERO COMEÇAR AGORA</button>
-<div class="small">Acesso imediato • Garantia de 7 dias</div>
+
+<button class="btn" onclick="window.location.href='https://pay.kiwify.com.br/SEU-LINK-AQUI'">QUERO COMEÇAR AGORA</button>
+
+<div class="small">Acesso imediato • Garantia de 7 dias • Suporte no WhatsApp<br>© 2026 Açaí que te Surpreende</div>
+
 </div>
 </body>
 </html>
