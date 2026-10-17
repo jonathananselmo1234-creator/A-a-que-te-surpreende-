@@ -1,0 +1,18 @@
+<form id="form">
+  <h2>Área de alunos - digite o e-mail da compra</h2>
+  <input id="email" type="email" required placeholder="seu@email.com">
+  <button>Entrar</button>
+</form>
+<script>
+document.getElementById('form').onsubmit = async (e) => {
+  e.preventDefault();
+  const email = document.getElementById('email').value;
+  const r = await fetch('/api/login', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({email})
+  });
+  if(r.ok) window.location.href = '/membros.html';
+  else alert('E-mail não encontrado, paga primeiro na QiFi.');
+}
+</script>
