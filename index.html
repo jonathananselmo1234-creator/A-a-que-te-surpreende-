@@ -89,11 +89,37 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 <p style="color:#fff;font-size:12px;font-weight:700;margin-top:8px">Depois volta para <span style="text-decoration:line-through">R$197</span> | Restam 7 vagas</p>
 </div>
 
-<a href="https://pay.kiwify.com.br/JTxa4rK" style="text-decoration: none;">
-  <button class="btn-venda-piscando">
-    QUERO MEU<br>ACESSO AGORA
-  </button>
-</a>
+<style>
+  .btn-compra {
+    background: #00d26a;
+    color: #fff;
+    font-family: Anton, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 14px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 210, 106, 0.5);
+    animation: brilho 1.5s infinite;
+  }
+  @keyframes brilho {
+    0% { box-shadow: 0 0 10px rgba(0, 210, 106, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(0, 210, 106, 0.9); }
+    100% { box-shadow: 0 0 10px rgba(0, 210, 106, 0.5); }
+  }
+  .btn-compra:hover {
+    background: #00b85a;
+    transform: scale(1.03);
+  }
+</style>
+
+<div style="text-align: center; margin: 25px 0;">
+  <a href="https://pay.kiwify.com.br/JTxa4rK" target="_blank" rel="noopener noreferrer" class="btn-compra">
+    QUERO MEU ACESSO AGORA
+  </a>
+</div>
 
 <div class="garantia">
 <div class="garantia-icone">🛡️</div>
