@@ -27,6 +27,18 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 .yellow{color:#ffea00;font-weight:900}
 .bonus-highlight{background:#ffea00;color:#000;border-radius:14px;padding:16px;margin:22px 20px;text-align:center;font-weight:900;font-size:16px}
 .green{color:#4ade80;font-size:18px;font-weight:900;text-align:center;padding:0 20px;margin-top:20px;line-height:1.3}
+.depoimentos-wrap{margin:30px 20px 0}
+.depoimentos-title{font-family:'Anton',sans-serif;color:#c084fc;font-size:30px;padding-bottom:6px;border-bottom:3px solid #a855f7;display:inline-block;text-transform:uppercase;margin-bottom:16px}
+.depo-grid{display:flex;flex-direction:column;gap:16px;margin-top:10px}
+.depo-card{background:rgba(255,255,255,0.06);border:1px solid rgba(168,85,247,0.4);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:12px}
+.depo-header{display:flex;gap:12px;align-items:center}
+.depo-avatar{width:48px;height:48px;border-radius:50%;background:#2a1a5e;border:2px solid #a855f7;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-size:18px;color:#ffea00}
+.depo-nome{font-weight:900;font-size:14px;color:#fff}
+.depo-sub{color:#4ade80;font-size:11px;font-weight:700}
+.depo-estrelas{color:#ffea00;font-size:12px;margin-top:2px;letter-spacing:1px}
+.depo-texto{font-size:13.5px;line-height:1.5;font-weight:600;color:#e5e7eb}
+.depo-foto{width:100%;border-radius:12px;border:1px solid rgba(255,255,255,0.15);display:block;object-fit:cover}
+.depoimentos-impacto{background:#000000;border:2px solid #ffea00;border-radius:14px;padding:20px;margin-top:20px;font-size:15.5px;line-height:1.6;font-weight:700;color:#ffffff;box-shadow:0 0 25px rgba(255,234,0,0.18)}
 .price-box{background:rgba(255,255,255,0.06);border:2px solid #ffea00;border-radius:16px;padding:22px;margin:26px 20px 0;text-align:center}
 .price-de{color:#9ca3af;font-size:14px;text-decoration:line-through}
 .price-valor{color:#ffea00;font-family:'Anton',sans-serif;font-size:56px;line-height:1;margin-top:4px}
@@ -34,9 +46,8 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 .argumento{background:#000;border-left:4px solid #ffea00;border-radius:10px;padding:14px;margin-top:16px;text-align:left}
 .argumento p{font-size:14px;color:#fff;line-height:1.6;font-weight:800}
 .timer-box{background:#b91c1c;border-radius:12px;padding:14px;margin:22px 20px 0;text-align:center;border:2px solid #ffea00}
-.btn{width:calc(100% - 40px);margin:18px 20px 0;background:#ffea00;color:#000;font-family:'Anton',sans-serif;font-size:22px;padding:20px;border-radius:16px;border:none;cursor:pointer;letter-spacing:0.5px;box-shadow:0 0 30px rgba(255,234,0,0.6);animation:pisca 1.2s infinite}
-@keyframes pisca{0%,100%{transform:scale(1);box-shadow:0 0 25px rgba(255,234,0,0.6)}50%{transform:scale(1.05);box-shadow:0 0 45px rgba(255,234,0,1);background:#fff000}}
-.btn:active{transform:scale(0.97)}
+.btn-compra{background:#00d26a;color:#fff;font-family:Anton,sans-serif;font-size:18px;font-weight:700;padding:14px 30px;border-radius:8px;text-decoration:none;display:inline-block;text-align:center;box-shadow:0 0 15px rgba(0,210,106,0.5);animation:brilho 1.5s infinite}
+@keyframes brilho{0%{box-shadow:0 0 10px rgba(0,210,106,0.5)}50%{box-shadow:0 0 20px rgba(0,210,106,0.9)}100%{box-shadow:0 0 10px rgba(0,210,106,0.5)}}
 .garantia{background:rgba(255,255,255,0.08);border:2px dashed #4ade80;border-radius:14px;padding:18px;margin:24px 20px;display:flex;gap:14px;align-items:center}
 .garantia-icone{font-size:42px}
 .garantia p{font-size:14px;font-weight:700;line-height:1.4}
@@ -65,14 +76,45 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 <li><span>✓</span> Como criar CNPJ</li>
 <li><span>✓</span> Como vincular iFood</li>
 </ul>
-
 <div class="bonus-title">BÔNUS EXCLUSIVO</div>
 <div class="bonus-box">
 <p>Você ainda aprende a fazer o <span class="yellow">COPO DA FELICIDADE</span> + <span class="yellow">7 RECEITAS CASEIRAS</span> + <span class="yellow">CREME DE CUPUAÇU</span> que vão fazer seus clientes ficarem loucos!</p>
 </div>
 <div class="bonus-highlight">🎁 BÔNUS: COPO DA FELICIDADE + 7 RECEITAS + CUPUAÇU</div>
-
 <p class="green">Você será seu próprio chefe sem depender de patrão.</p>
+
+<div class="depoimentos-wrap">
+<div class="depoimentos-title">QUEM JÁ PROVOU, APROVA</div>
+<p style="font-size:14px;font-weight:700;color:#d1d5db;margin-bottom:14px">Esses são depoimentos de alguns dos nossos clientes fiéis:</p>
+<div class="depo-grid">
+<div class="depo-card">
+<div class="depo-header"><div class="depo-avatar">P</div><div><div class="depo-nome">Peterson Peixoto</div><div class="depo-sub">● 17/12/2023 • Açaí que vai te surpreender</div><div class="depo-estrelas">★★★★★</div></div></div>
+<div class="depo-texto">"Açaí que vai te surpreender. Nosso irmão Natanael Açaí. Como a bíblia diz ajudar primeiro os doméstico da fé 🙏 Bora lá povo um dos melhores açaí que já provei de Guaíba"</div>
+<img src="foto-peterson-6-copos.jpg" class="depo-foto" alt="6 copos de açaí">
+</div>
+<div class="depo-card">
+<div class="depo-header"><div class="depo-avatar">J</div><div><div class="depo-nome">Jonathan Anselmo</div><div class="depo-sub">● 12/01/2021 • Cliente fiel</div><div class="depo-estrelas">★★★★★</div></div></div>
+<div class="depo-texto">"Me vicieie, não consigo mais parar kk, melhor açaí da região."</div>
+<img src="foto-jonathan-copo.jpg" class="depo-foto" alt="Copo de açaí">
+</div>
+<div class="depo-card">
+<div class="depo-header"><div class="depo-avatar">Q</div><div><div class="depo-nome">Cliente - Tigela Especial</div><div class="depo-sub">● Pedido entregue</div><div class="depo-estrelas">★★★★★</div></div></div>
+<div class="depo-texto">"Tigela caprichada! Veio com 【entity-Nutella¦canonical_name=Nutella】, leite em pó, paçoca e muito confete. Meus filhos amaram!"</div>
+<img src="foto-tigela-especial.jpg" class="depo-foto" alt="Tigela de açaí">
+</div>
+<div class="depo-card">
+<div class="depo-header"><div class="depo-avatar">K</div><div><div class="depo-nome">Cliente - Copos 700ml</div><div class="depo-sub">● Pedido entregue</div><div class="depo-estrelas">★★★★★</div></div></div>
+<div class="depo-texto">"Dois copões bem recheados, um com morango e confete e outro com muito creme de Ninho e 【entity-Nutella¦canonical_name=Nutella】. Virei cliente fiel!"</div>
+<img src="foto-2-copos-700ml.jpg" class="depo-foto" alt="Dois copos 700ml">
+</div>
+</div>
+<div class="depoimentos-impacto">
+<p>Esses são só <span class="yellow">ALGUNS</span> dos clientes que eu fidelizei ao longo da minha caminhada. E a melhor parte? Você também pode ter a agenda lotada e faturar muito ainda neste verão.</p>
+<p style="margin-top:12px">Dentro do curso eu te entrego o passo a passo completo, sem enrolação, pra você começar a vender aí mesmo, do conforto da sua casa.</p>
+<p style="margin-top:14px"><span class="yellow" style="font-size:17px">Esse pode ser o verão mais lucrativo da sua vida, mas corre: as vagas são limitadas e essa oportunidade é por tempo limitado.</span></p>
+<p style="margin-top:10px;font-weight:900;color:#fff">Garanta a sua agora e comece hoje mesmo!</p>
+</div>
+</div>
 
 <div class="price-box">
 <div class="price-de">De R$ 197,00 por apenas</div>
@@ -82,80 +124,27 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 <p>R$87 parece muito? É só <span class="yellow">2 açaís de 700ML</span>. No verão você vende isso em <span class="yellow">menos de 1 hora</span> e já recuperou tudo. O resto do ano é só lucro com um conhecimento que ninguém te tira.</p>
 </div>
 </div>
-
 <div class="timer-box">
 <p style="color:#ffea00;font-family:Anton;font-size:16px;letter-spacing:1px">🔥 ESSA TURMA ENCERRA EM:</p>
 <div id="timer" style="color:#fff;font-family:Anton;font-size:36px;line-height:1;margin-top:6px">01:47:00</div>
 <p style="color:#fff;font-size:12px;font-weight:700;margin-top:8px">Depois volta para <span style="text-decoration:line-through">R$197</span> | Restam 7 vagas</p>
 </div>
-
-<style>
-  .btn-compra {
-    background: #00d26a;
-    color: #fff;
-    font-family: Anton, sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    padding: 14px 30px;
-    border-radius: 8px;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-    box-shadow: 0 0 15px rgba(0, 210, 106, 0.5);
-    animation: brilho 1.5s infinite;
-  }
-  @keyframes brilho {
-    0% { box-shadow: 0 0 10px rgba(0, 210, 106, 0.5); }
-    50% { box-shadow: 0 0 20px rgba(0, 210, 106, 0.9); }
-    100% { box-shadow: 0 0 10px rgba(0, 210, 106, 0.5); }
-  }
-  .btn-compra:hover {
-    background: #00b85a;
-    transform: scale(1.03);
-  }
-</style>
-
 <div style="text-align: center; margin: 25px 0;">
-  <a href="https://pay.kiwify.com.br/JTxa4rK" target="_blank" rel="noopener noreferrer" class="btn-compra">
-    QUERO MEU ACESSO AGORA
-  </a>
+<a href="https://pay.kiwify.com.br/JTxa4rK" target="_blank" class="btn-compra">QUERO MEU ACESSO AGORA</a>
 </div>
-<p style="text-align:center; margin-top:14px;">
-  <a href="/login.html" style="color:#c084fc; font-weight:800; font-size:14px; text-decoration:underline;">
-    Já é aluno? Clique aqui para acessar as aulas
-  </a>
-</p>
-<div class="garantia">
-<div class="garantia-icone">🛡️</div>
-<p><strong>7 DIAS DE GARANTIA TOTAL</strong><br>Se em 7 dias você não gostar, devolvemos 100% do seu dinheiro. Risco ZERO pra você.</p>
-</div>
+<p style="text-align:center; margin-top:14px;"><a href="/login.html" style="color:#c084fc; font-weight:800; font-size:14px; text-decoration:underline;">Já é aluno? Clique aqui para acessar as aulas</a></p>
+<div class="garantia"><div class="garantia-icone">🛡️</div><p><strong>7 DIAS DE GARANTIA TOTAL</strong><br>Se em 7 dias você não gostar, devolvemos 100% do seu dinheiro. Risco ZERO pra você.</p></div>
 <div class="small">Acesso imediato • Garantia de 7 dias • Suporte no WhatsApp<br>© 2026 Açaí que te Surpreende</div>
 </div>
-
 <script>
 (function(){
-  const KEY = 'acai_timer_fim';
-  let fim = localStorage.getItem(KEY);
-  if(!fim){
-    fim = new Date().getTime() + (1*60 + 47)*60*1000;
-    localStorage.setItem(KEY, fim);
-  } else {
-    fim = parseInt(fim);
-  }
-  const el = document.getElementById('timer');
-  setInterval(() => {
-    let agora = new Date().getTime();
-    let diff = fim - agora;
-    if(diff <= 0){
-      fim = new Date().getTime() + (2*60 + 17)*60*1000;
-      localStorage.setItem(KEY, fim);
-      diff = fim - agora;
-    }
-    let h = Math.floor(diff / (1000*60*60));
-    let m = Math.floor((diff % (1000*60*60)) / (1000*60));
-    let s = Math.floor((diff % (1000*60)) / 1000);
-    el.textContent = `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-  }, 1000);
+  const KEY='acai_timer_fim';let fim=localStorage.getItem(KEY);
+  if(!fim){fim=new Date().getTime()+(1*60+47)*60*1000;localStorage.setItem(KEY,fim);}else{fim=parseInt(fim);}
+  const el=document.getElementById('timer');
+  setInterval(()=>{let agora=new Date().getTime();let diff=fim-agora;
+  if(diff<=0){fim=new Date().getTime()+(2*60+17)*60*1000;localStorage.setItem(KEY,fim);diff=fim-agora;}
+  let hh=Math.floor(diff/(1000*60*60));let mm=Math.floor((diff%(1000*60*60))/(1000*60));let ss=Math.floor((diff%(1000*60))/1000);
+  el.textContent=`${String(hh).padStart(2,'0')}:${String(mm).padStart(2,'0')}:${String(ss).padStart(2,'0')}`;},1000);
 })();
 </script>
 </body>
