@@ -16,62 +16,51 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 @keyframes brilhoPiscando{from{text-shadow:0 0 10px #ffea00,0 0 20px #ffea00}to{text-shadow:0 0 20px #ffea00,0 0 40px #ffe600,0 0 60px #ffea00}}
 .title{font-family:'Anton',sans-serif;font-size:58px;color:#b84dff;text-shadow:0 0 10px #ffea00,0 0 20px #ffea00,0 0 40px #ffea00;text-align:center;line-height:1.1;animation:brilhoPiscando 1.2s infinite alternate}
 .subtitle{font-family:'Anton',sans-serif;color:#ffea00;font-size:21px;padding:12px 20px 0}
-.card{background:#000;border:1px solid rgba(168,85,247,0.6);border-radius:14px;padding:18px;margin:18px 20px}
-.card p{font-size:16.5px;line-height:1.6;font-weight:800;color:#fff}
+.card{background:#000;border:1px solid rgba(168,85,247,0.6);border-radius:14px;padding:20px;margin:18px 20px}
+.card p{font-size:22px;line-height:1.5;font-weight:900;color:#fff}
 .section-title{font-family:'Anton',sans-serif;color:#c084fc;font-size:30px;margin:28px 20px 0;padding-bottom:6px;border-bottom:3px solid #a855f7;display:inline-block;text-transform:uppercase}
-.list{list-style:none;padding:16px 20px;display:flex;flex-direction:column;gap:12px}
-.list li{font-size:15px;font-weight:700;display:flex;gap:10px;align-items:center}
-.list li span{color:#4ade80;font-size:18px}
+.list{list-style:none;padding:16px 20px;display:flex;flex-direction:column;gap:14px}
+.list li{font-size:19px;font-weight:800;display:flex;gap:10px;align-items:center;line-height:1.4}
+.list li span{color:#4ade80;font-size:20px}
 .bonus-title{font-family:'Anton',sans-serif;color:#60a5fa;font-size:32px;margin:32px 20px 0}
 .bonus-box{background:rgba(255,255,255,0.08);border:1px solid rgba(96,165,250,0.5);border-radius:14px;padding:18px;margin:14px 20px}
 .bonus-box p{font-weight:700;line-height:1.4}
 .yellow{color:#ffea00;font-weight:900}
-.bonus-highlight{background:#ffea00;color:#000;border-radius:14px;padding:18px;margin:22px 20px;text-align:center;font-weight:900;font-size:20px;animation:piscaVagas 0.9s infinite alternate;box-shadow:0 0 15px rgba(255,234,0,0.6);letter-spacing:1px}
-@keyframes piscaVagas{0%{transform:scale(1);box-shadow:0 0 15px rgba(255,234,0,0.6)}100%{transform:scale(1.05);box-shadow:0 0 30px rgba(255,234,0,1)}}
+.bonus-highlight{background:#ffea00;color:#000;border-radius:14px;padding:18px;margin:22px 20px;text-align:center;font-weight:900;font-size:20px;animation:piscaVagas 0.9s infinite alternate;box-shadow:0 0 15px rgba(255,234,0,0.6)}
+@keyframes piscaVagas{0%{transform:scale(1)}100%{transform:scale(1.05);box-shadow:0 0 30px rgba(255,234,0,1)}}
 .green{color:#4ade80;font-size:18px;font-weight:900;text-align:center;padding:0 20px;margin-top:20px;line-height:1.3}
 .depoimentos-wrap{margin:30px 20px 0}
 .depoimentos-title{font-family:'Anton',sans-serif;color:#c084fc;font-size:30px;padding-bottom:6px;border-bottom:3px solid #a855f7;display:inline-block;text-transform:uppercase;margin-bottom:16px}
 .depo-grid{display:flex;flex-direction:column;gap:16px;margin-top:10px}
 .depo-foto{width:100%;border-radius:12px;border:1px solid rgba(255,255,255,0.15);display:block;object-fit:cover}
-.depoimentos-impacto{background:#000;border:2px solid #ffea00;border-radius:14px;padding:20px;margin-top:20px;font-size:15.5px;line-height:1.6;font-weight:700;color:#fff;box-shadow:0 0 25px rgba(255,234,0,0.18)}
+.depoimentos-impacto{background:#000;border:2px solid #ffea00;border-radius:14px;padding:20px;margin-top:20px;font-size:15.5px;line-height:1.6;font-weight:700;color:#fff}
 .oferta-stack{background:#000;border:2px solid #ffea00;border-radius:16px;padding:22px;margin:28px 20px;box-shadow:0 0 25px rgba(255,234,0,0.25)}
-.oferta-stack .oferta-top{color:#ffea00;font-family:'Anton',sans-serif;font-size:22px;text-align:center;margin-bottom:14px}
-.oferta-stack .oferta-lista{font-size:14px;line-height:1.8;font-weight:700}
-.oferta-stack .oferta-total{font-weight:900;text-align:center;margin-top:14px;border-top:1px dashed #333;padding-top:12px;font-size:16px}
+.oferta-stack .oferta-top{color:#ff1a1a;font-family:'Anton',sans-serif;font-size:32px;text-align:center;margin-bottom:14px;letter-spacing:2px}
+.oferta-stack .oferta-lista{font-size:18px;line-height:1.9;font-weight:800}
+.oferta-stack .oferta-total{font-weight:900;text-align:center;margin-top:14px;border-top:1px dashed #333;padding-top:12px;font-size:18px;color:#ffea00}
+.desconto-pisca{display:inline-block;background:#ffea00;color:#000;padding:4px 10px;border-radius:6px;margin-left:8px;font-size:15px;animation:piscaDesconto 0.8s infinite alternate}
+@keyframes piscaDesconto{0%{transform:scale(1)}100%{transform:scale(1.08);box-shadow:0 0 15px #ffea00}}
 .price-box{background:rgba(255,255,255,0.06);border:2px solid #ffea00;border-radius:16px;padding:22px;margin:26px 20px 0;text-align:center}
 .price-de{color:#9ca3af;font-size:14px;text-decoration:line-through}
 .price-valor{color:#ffea00;font-family:'Anton',sans-serif;font-size:56px;line-height:1;margin-top:4px}
-.price-parcela{color:#fff;font-size:13px;margin-top:4px}
-.argumento{background:#000;border-left:4px solid #ffea00;border-radius:10px;padding:14px;margin-top:16px;text-align:left}
-.argumento p{font-size:14px;color:#fff;line-height:1.6;font-weight:800}
 .timer-box{background:#b91c1c;border-radius:12px;padding:14px;margin:22px 20px 0;text-align:center;border:2px solid #ffea00}
-.btn-compra{background:#00d26a;color:#fff;font-family:'Anton',sans-serif;font-size:28px;font-weight:700;padding:22px 55px;border-radius:12px;text-decoration:none;display:inline-block;text-align:center;box-shadow:0 0 25px rgba(0,210,106,0.8);animation:brilhoForte 1s infinite alternate;width:90%;max-width:550px}
+.btn-compra{background:#00d26a;color:#fff;font-family:'Anton',sans-serif;font-size:28px;padding:22px 55px;border-radius:12px;text-decoration:none;display:inline-block;text-align:center;box-shadow:0 0 25px rgba(0,210,106,0.8);animation:brilhoForte 1s infinite alternate;width:90%;max-width:550px}
 @keyframes brilhoForte{0%{box-shadow:0 0 20px rgba(0,210,106,0.7);transform:scale(1)}100%{box-shadow:0 0 40px rgba(0,210,106,1),0 0 60px rgba(0,210,106,0.6);transform:scale(1.03)}}
 .ja-aluno{text-align:center;margin:30px 20px 10px}
-.ja-aluno a{color:#c084fc;font-weight:900;font-size:28px;text-decoration:underline;line-height:1.2;display:inline-block}
-.suporte-box{background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.6);border-radius:12px;padding:16px;margin:20px;text-align:center;font-weight:800}
-.suporte-box a{color:#4ade80;font-size:19px;text-decoration:none}
-.garantia{background:rgba(255,255,255,0.08);border:2px dashed #4ade80;border-radius:14px;padding:18px;margin:24px 20px;display:flex;gap:14px;align-items:center}
-.garantia-icone{font-size:42px}
-.garantia p{font-size:14px;font-weight:700;line-height:1.4}
-.garantia strong{color:#4ade80;font-size:16px}
-.small{color:#9ca3af;font-size:11px;text-align:center;margin-top:14px;padding-bottom:40px;line-height:1.4}
+.ja-aluno a{color:#c084fc;font-weight:800;font-size:16px;text-decoration:underline;line-height:1.2;display:inline-block}
+.suporte-box{background:rgba(37,211,102,0.12);border:1px solid #25D366;border-radius:50px;padding:14px;margin:24px 20px;text-align:center}
+.suporte-box a{color:#fff;font-weight:900;font-size:18px;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:10px}
 @media (min-width:768px){
-  .title{font-size:68px !important;line-height:1.05}
-  .subtitle{font-size:26px}
-  .card p{font-size:19px}
-  .section-title{font-size:36px}
-  .bonus-title{font-size:38px}
-  .oferta-stack{padding:28px}
-  .oferta-stack .oferta-top{font-size:28px}
-  .oferta-stack .oferta-lista{font-size:17px}
-  .oferta-stack .oferta-total{font-size:20px}
-  .bonus-highlight{font-size:26px;padding:22px}
-  .btn-compra{font-size:36px;padding:28px 65px}
-  .price-valor{font-size:68px}
-  .ja-aluno a{font-size:42px}
-  .suporte-box{font-size:18px}
-  .suporte-box a{font-size:22px}
+  .title{font-size:68px !important}
+  .card p{font-size:26px}
+  .list li{font-size:22px}
+  .oferta-stack .oferta-top{font-size:38px}
+  .oferta-stack .oferta-lista{font-size:20px}
+  .oferta-stack .oferta-total{font-size:22px}
+  .bonus-highlight{font-size:26px}
+  .btn-compra{font-size:34px}
+  .ja-aluno a{font-size:20px}
+  .suporte-box a{font-size:20px}
 }
 </style>
 </head>
@@ -80,7 +69,7 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 <div class="hero-wrap"><img src="IMG-20261016-WA0716.jpg" class="hero-photo" alt="Açaí"></div>
 <div class="title">LUCRE NESSE VERÃO ENTRE R$ 600 A R$ 5000 REAIS</div>
 <div class="subtitle">Eu me chamo Natanael Anselmo</div>
-<div class="card"><p>Quando comecei meu negócio de açaí, ninguém acreditou... 2 meses depois eu estava faturando <span class="yellow">5 mil reais</span> do conforto da minha casa. Nesse curso eu quero te mostrar que é <span class="yellow">100% possível</span> você fazer o mesmo.</p></div>
+<div class="card"><p>Quando comecei meu negócio de açaí, riram de mim, ninguém acreditou que daria certo... 2 meses depois eu estava faturando <span class="yellow">5 mil reais</span> do conforto da minha casa. Nesse curso eu quero te mostrar que é <span class="yellow">100% possível</span> você fazer o mesmo.</p></div>
 <div class="section-title">O QUE VOCÊ VAI APRENDER</div>
 <ul class="list">
 <li><span>✓</span> Como conseguir lucro com açaí</li>
@@ -98,21 +87,15 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 
 <div class="depoimentos-wrap">
 <div class="depoimentos-title">QUEM JÁ PROVOU, APROVA</div>
-<p style="font-size:14px;font-weight:700;color:#d1d5db;margin-bottom:14px">Esses são depoimentos de alguns dos nossos clientes fiéis:</p>
 <div class="depo-grid">
 <img src="854274855_28782131531446809_666226926300550015_n.webp" class="depo-foto" alt="Depoimento">
 <img src="854458107_1531670968722998_1836395890887594007_n.webp" class="depo-foto" alt="Depoimento">
-<img src="depo-kezia.webp" class="depo-foto" alt="Kézia">
-<img src="depo-lucas.webp" class="depo-foto" alt="Lucas">
 </div>
-<div class="depoimentos-impacto">
-<p>Esses são só <span class="yellow">ALGUNS</span> dos clientes que eu fidelizei ao longo da minha caminhada. E a melhor parte? Você também pode ter a agenda lotada e faturar muito ainda neste verão.</p>
-<p style="margin-top:12px">Dentro do curso eu te entrego o passo a passo completo, sem enrolação, pra você começar a vender aí mesmo, do conforto da sua casa.</p>
-</div>
+<div class="depoimentos-impacto"><p>Esses são só <span class="yellow">ALGUNS</span> dos clientes que eu fidelizei ao longo da minha caminhada. E a melhor parte? Você também pode ter a agenda lotada e faturar muito ainda neste verão.</p></div>
 </div>
 
 <div class="oferta-stack">
-<div class="oferta-top">DE: R$297 por R$87</div>
+<div class="oferta-top">ATENÇÃO</div>
 <div class="oferta-lista">
 O que você leva hoje:<br>
 Módulo 1 - Açaí (qual comprar, como armazenar, como fazer) - Valor R$67<br>
@@ -122,7 +105,7 @@ Módulo 4 - Vendas (iFood do zero + WhatsApp + precificação) - Valor R$97<br>
 Módulo 5 - Dicas de preparo de Copo da Felicidade e Cupuaçu - Valor R$27<br>
 Módulo 6 - 7 Receitas caseiras para vender muito - Valor R$17,99
 </div>
-<div class="oferta-total">Total: <span style="text-decoration:line-through;color:#9ca3af">R$352</span> por apenas R$87</div>
+<div class="oferta-total">Total: R$352 por apenas R$87 <span class="desconto-pisca">75,28% DE DESCONTO</span></div>
 </div>
 
 <div class="bonus-highlight">🔥 VAGAS LIMITADAS 🔥</div>
@@ -130,35 +113,19 @@ Módulo 6 - 7 Receitas caseiras para vender muito - Valor R$17,99
 <div class="price-box">
 <div class="price-de">De R$ 352,00 por apenas</div>
 <div class="price-valor">R$ 87,00</div>
-<div class="price-parcela">à vista no PIX ou 12x de R$ 8,97 no cartão</div>
-<div class="argumento"><p>R$87 parece muito? É só <span class="yellow">2 açaís de 700ML</span>. No verão você vende isso em <span class="yellow">menos de 1 hora</span> e já recuperou tudo. O resto do ano é só lucro com um conhecimento que ninguém te tira.</p></div>
 </div>
 
-<div class="timer-box">
-<p style="color:#ffea00;font-family:Anton;font-size:16px;letter-spacing:1px">🔥 ESSA TURMA ENCERRA EM:</p>
-<div id="timer" style="color:#fff;font-family:Anton;font-size:36px;line-height:1;margin-top:6px">01:47:00</div>
-<p style="color:#fff;font-size:12px;font-weight:700;margin-top:8px">Depois volta para <span style="text-decoration:line-through">R$197</span> | Restam 7 vagas</p>
-</div>
-
+<div class="timer-box"><div id="timer" style="color:#fff;font-family:Anton;font-size:36px">01:47:00</div></div>
 <div style="text-align:center;margin:25px 0"><a href="https://pay.kiwify.com.br/JTxa4rK" target="_blank" class="btn-compra">QUERO MEU ACESSO AGORA</a></div>
 
-<div class="ja-aluno"><a href="/login.html">JÁ SOU ALUNO - Clique aqui para acessar as aulas</a></div>
+<div class="ja-aluno"><a href="/login.html">JÁ SOU ALUNO</a></div>
 
-<div class="suporte-box">📱 SUPORTE: <a href="https://wa.me/5551998114142?text=Ol%C3%A1%20preciso%20de%20ajuda%20com%20o%20curso%20de%20a%C3%A7a%C3%AD" target="_blank">(51) 99811-4142 - Clique aqui e fale no WhatsApp</a></div>
+<div class="suporte-box"><a href="https://wa.me/5551998114142?text=Ol%C3%A1%20preciso%20de%20ajuda%20com%20o%20curso" target="_blank"> <span style="background:#25D366;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:18px">💬</span> Tire suas dúvidas no WhatsApp</a></div>
 
-<div class="garantia"><div class="garantia-icone">🛡️</div><p><strong>7 DIAS DE GARANTIA TOTAL</strong><br>Se em 7 dias você não gostar, devolvemos 100% do seu dinheiro. Risco ZERO pra você.</p></div>
-<div class="small">Acesso imediato • Garantia de 7 dias • Suporte no WhatsApp<br>© 2026 Açaí que te Surpreende</div>
+<div class="garantia"><div class="garantia-icone">🛡️</div><p><strong>7 DIAS DE GARANTIA TOTAL</strong><br>Se em 7 dias você não gostar, devolvemos 100%.</p></div>
 </div>
 <script>
-(function(){
-  const KEY='acai_timer_fim';let fim=localStorage.getItem(KEY);
-  if(!fim){fim=new Date().getTime()+(1*60+47)*60*1000;localStorage.setItem(KEY,fim);}else{fim=parseInt(fim);}
-  const el=document.getElementById('timer');
-  setInterval(()=>{let agora=new Date().getTime();let diff=fim-agora;
-  if(diff<=0){fim=new Date().getTime()+(2*60+17)*60*1000;localStorage.setItem(KEY,fim);diff=fim-agora;}
-  let hh=Math.floor(diff/(1000*60*60));let mm=Math.floor((diff%(1000*60*60))/(1000*60));let ss=Math.floor((diff%(1000*60))/1000);
-  el.textContent=`${String(hh).padStart(2,'0')}:${String(mm).padStart(2,'0')}:${String(ss).padStart(2,'0')}`;},1000);
-})();
+(function(){const KEY='acai_timer_fim';let fim=localStorage.getItem(KEY);if(!fim){fim=new Date().getTime()+(1*60+47)*60*1000;localStorage.setItem(KEY,fim);}else{fim=parseInt(fim);}const el=document.getElementById('timer');setInterval(()=>{let diff=fim-new Date().getTime();if(diff<=0){fim=new Date().getTime()+(2*60+17)*60*1000;localStorage.setItem(KEY,fim);diff=fim-new Date().getTime();}let hh=Math.floor(diff/(1000*60*60));let mm=Math.floor((diff%(1000*60*60))/(1000*60));let ss=Math.floor((diff%(1000*60))/1000);el.textContent=`${String(hh).padStart(2,'0')}:${String(mm).padStart(2,'0')}:${String(ss).padStart(2,'0')}`;},1000);})();
 </script>
 </body>
 </html>
