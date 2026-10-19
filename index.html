@@ -8,14 +8,12 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#08081a;font-family:'Inter',sans-serif;color:#fff;display:flex;justify-content:center;overflow-x:hidden}
-body::before{content:"";position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at top, #2a1a5e 0%, #08081a 60%);z-index:0}
-body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;background-image:radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px);background-size:30px 30px;opacity:0.3;z-index:0;pointer-events:none}
 .container{width:100%;max-width:800px;position:relative;z-index:2}
 .hero-wrap{padding:16px 16px 0}
 .hero-photo{width:100%;height:700px;object-fit:cover;object-position:center 20%;border-radius:18px;display:block;border:2px solid rgba(168,85,247,0.5)}
 @keyframes brilhoPiscando{from{text-shadow:0 0 10px #ffea00,0 0 20px #ffea00}to{text-shadow:0 0 20px #ffea00,0 0 40px #ffe600,0 0 60px #ffea00}}
 .title{font-family:'Anton',sans-serif;font-size:58px;color:#b84dff;text-shadow:0 0 10px #ffea00,0 0 20px #ffea00,0 0 40px #ffea00;text-align:center;line-height:1.1;animation:brilhoPiscando 1.2s infinite alternate}
-.subtitle{font-family:'Anton',sans-serif;color:#b84dff;font-size:26px;padding:16px 20px 0;text-shadow:0 0 15px rgba(184,77,255,0.8);letter-spacing:1px;font-weight:900}
+.subtitle{font-family:'Anton',sans-serif;color:#b84dff;font-size:26px;padding:16px 20px 0;text-shadow:0 0 15px rgba(184,77,255,0.8);font-weight:900}
 .card{background:#000;border:1px solid rgba(168,85,247,0.6);border-radius:14px;padding:20px;margin:18px 20px}
 .card p{font-size:22px;line-height:1.5;font-weight:900;color:#fff}
 .section-title{font-family:'Anton',sans-serif;color:#c084fc;font-size:30px;margin:28px 20px 0;padding-bottom:6px;border-bottom:3px solid #a855f7;display:inline-block;text-transform:uppercase}
@@ -27,53 +25,33 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 .bonus-box p{font-weight:800;line-height:1.5;font-size:18px}
 .yellow{color:#ffea00;font-weight:900}
 .blue{color:#60a5fa;font-weight:800}
-.bonus-highlight{background:#ffea00;color:#000;border-radius:14px;padding:18px;margin:22px 20px;text-align:center;font-weight:900;font-size:20px;animation:piscaVagas 0.9s infinite alternate;box-shadow:0 0 15px rgba(255,234,0,0.6)}
-@keyframes piscaVagas{0%{transform:scale(1)}100%{transform:scale(1.05);box-shadow:0 0 30px rgba(255,234,0,1)}}
-.green{color:#4ade80;font-size:20px;font-weight:900;text-align:center;padding:0 20px;margin-top:22px;line-height:1.3}
+.bonus-highlight{background:#ffea00;color:#000;border-radius:12px;padding:16px;margin:22px 20px;text-align:center;font-weight:900;font-size:20px;animation:piscaSuave 2s infinite alternate}
+@keyframes piscaSuave{0%{transform:scale(1);box-shadow:0 0 8px rgba(255,234,0,0.4)}100%{transform:scale(1.02);box-shadow:0 0 14px rgba(255,234,0,0.6)}}
+.green{color:#4ade80;font-size:20px;font-weight:900;text-align:center;padding:0 20px;margin-top:22px}
 .depoimentos-wrap{margin:30px 20px 0}
 .depoimentos-title{font-family:'Anton',sans-serif;color:#c084fc;font-size:30px;padding-bottom:6px;border-bottom:3px solid #a855f7;display:inline-block;text-transform:uppercase;margin-bottom:16px}
 .depo-grid{display:flex;flex-direction:column;gap:16px;margin-top:10px}
-.depo-foto{width:100%;border-radius:12px;border:1px solid rgba(255,255,255,0.15);display:block;object-fit:cover}
-.depoimentos-impacto{background:#000;border:2px solid #ffea00;border-radius:14px;padding:20px;margin-top:20px;font-size:15.5px;line-height:1.6;font-weight:700;color:#fff}
-.oferta-stack{background:#000;border:2px solid #ffea00;border-radius:16px;padding:22px;margin:28px 20px;box-shadow:0 0 25px rgba(255,234,0,0.25)}
+.depo-foto{width:100%;border-radius:12px;border:1px solid rgba(255,255,255,0.15);display:block}
+.depoimentos-impacto{background:#000;border:2px solid #ffea00;border-radius:14px;padding:20px;margin-top:20px;font-weight:700;color:#fff}
+.oferta-stack{background:#000;border:2px solid #ffea00;border-radius:16px;padding:22px;margin:28px 20px;box-shadow:0 0 25px rgba(255,234,0,0.15)}
 .oferta-stack .oferta-top{color:#ff1a1a;font-family:'Anton',sans-serif;font-size:32px;text-align:center;margin-bottom:8px;letter-spacing:2px}
-.oferta-stack .oferta-sub{color:#ffea00;font-family:'Anton',sans-serif;font-size:20px;text-align:center;margin-bottom:14px;letter-spacing:1px}
+.oferta-stack .oferta-sub{color:#ffea00;font-family:'Anton',sans-serif;font-size:20px;text-align:center;margin-bottom:14px}
 .oferta-stack .oferta-lista{font-size:16px;line-height:2;font-weight:800}
 .oferta-stack .oferta-total{font-weight:900;text-align:center;margin-top:14px;border-top:1px dashed #333;padding-top:14px;font-size:18px;color:#ffea00;line-height:1.6}
-.desconto-pisca{display:inline-block;background:#ffea00;color:#000;padding:6px 14px;border-radius:8px;margin-top:10px;font-size:16px;animation:piscaDesconto 0.8s infinite alternate;font-weight:900}
-@keyframes piscaDesconto{0%{transform:scale(1)}100%{transform:scale(1.08)}}
-.price-box{background:rgba(255,255,255,0.06);border:2px solid #ffea00;border-radius:16px;padding:22px;margin:26px 20px 0;text-align:center}
-.price-de{color:#9ca3af;font-size:14px;text-decoration:line-through}
-.price-valor{color:#ffea00;font-family:'Anton',sans-serif;font-size:56px;line-height:1;margin-top:4px}
-.price-parcela{color:#fff;font-size:13px;margin-top:4px}
+.desconto-pisca{display:inline-block;background:#ffea00;color:#000;padding:6px 14px;border-radius:8px;margin-top:10px;font-size:16px;font-weight:900;animation:piscaSuave 2s infinite alternate}
 .timer-box{background:#b91c1c;border-radius:12px;padding:14px;margin:22px 20px 0;text-align:center;border:2px solid #ffea00}
-.btn-compra{background:#00d26a;color:#fff;font-family:'Anton',sans-serif;font-size:28px;padding:22px 55px;border-radius:12px;text-decoration:none;display:inline-block;text-align:center;box-shadow:0 0 25px rgba(0,210,106,0.8);animation:brilhoForte 1s infinite alternate;width:90%;max-width:550px}
-@keyframes brilhoForte{0%{box-shadow:0 0 20px rgba(0,210,106,0.7)}100%{box-shadow:0 0 40px rgba(0,210,106,1)}}
+.btn-compra{background:#00d26a;color:#fff;font-family:'Anton',sans-serif;font-size:28px;padding:22px 55px;border-radius:12px;text-decoration:none;display:inline-block;text-align:center;width:90%;max-width:550px;animation:brilhoSuave 2.5s infinite alternate}
+@keyframes brilhoSuave{0%{box-shadow:0 0 10px rgba(0,210,106,0.4);transform:scale(1)}100%{box-shadow:0 0 18px rgba(0,210,106,0.6);transform:scale(1.01)}}
 .ja-aluno{text-align:center;margin:30px 20px 10px}
 .ja-aluno a{color:#c084fc;font-weight:800;font-size:16px;text-decoration:underline}
 .suporte-box{background:rgba(37,211,102,0.12);border:1px solid #25D366;border-radius:50px;padding:14px;margin:24px 20px;text-align:center}
 .suporte-box a{color:#fff;font-weight:900;font-size:18px;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:10px}
-.garantia{background:linear-gradient(135deg,#000000 0%,#0a1a0f 100%);border:2px solid #4ade80;border-radius:20px;padding:24px;margin:32px 20px;display:flex;gap:18px;align-items:center;box-shadow:0 0 30px rgba(74,222,128,0.25),inset 0 0 20px rgba(74,222,128,0.05)}
-.garantia-icone{background:#4ade80;color:#000;width:72px;height:72px;min-width:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:38px;font-weight:900;box-shadow:0 0 20px rgba(74,222,128,0.7);flex-shrink:0}
-.garantia strong{color:#4ade80;font-size:19px;display:block;margin-bottom:6px;font-family:'Anton',sans-serif;letter-spacing:0.5px}
+.garantia{background:linear-gradient(135deg,#000000 0%,#0a1a0f 100%);border:2px solid #4ade80;border-radius:20px;padding:24px;margin:32px 20px;display:flex;gap:18px;align-items:center}
+.garantia-icone{background:#4ade80;color:#000;width:72px;height:72px;min-width:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:38px;font-weight:900;flex-shrink:0}
+.garantia strong{color:#4ade80;font-size:19px;display:block;margin-bottom:6px;font-family:'Anton',sans-serif}
 .garantia p{font-size:15px;line-height:1.5;font-weight:700;color:#fff}
-.small{color:#9ca3af;font-size:11px;text-align:center;margin-top:14px;padding-bottom:40px;line-height:1.4}
-@media (min-width:768px){
-  .title{font-size:68px !important}
-  .subtitle{font-size:30px !important}
-  .card p{font-size:26px}
-  .bonus-box p{font-size:20px}
-  .green{font-size:24px}
-  .oferta-stack .oferta-top{font-size:40px}
-  .oferta-stack .oferta-sub{font-size:24px}
-  .oferta-stack .oferta-lista{font-size:18px}
-  .oferta-stack .oferta-total{font-size:22px}
-  .bonus-highlight{font-size:26px}
-  .garantia{padding:28px}
-  .garantia-icone{width:84px;height:84px;min-width:84px;font-size:42px}
-  .garantia strong{font-size:22px}
-  .garantia p{font-size:17px}
-}
+.small{color:#9ca3af;font-size:11px;text-align:center;margin-top:14px;padding-bottom:40px}
+@media (min-width:768px){.title{font-size:68px !important}.subtitle{font-size:30px !important}.card p{font-size:26px}.bonus-box p{font-size:20px}.green{font-size:24px}.oferta-stack .oferta-top{font-size:40px}.oferta-stack .oferta-sub{font-size:24px}.oferta-stack .oferta-lista{font-size:18px}.bonus-highlight{font-size:24px}.btn-compra{font-size:32px}}
 </style>
 </head>
 <body>
@@ -81,7 +59,7 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 <div class="hero-wrap"><img src="IMG-20261016-WA0716.jpg" class="hero-photo" alt="Açaí"></div>
 <div class="title">LUCRE NESSE VERÃO ENTRE R$ 600 A R$ 5000 REAIS</div>
 <div class="subtitle">Eu me chamo Natanael</div>
-<div class="card"><p>Quando comecei meu negócio de açaí, riram de mim, ninguém acreditou que daria certo... 2 meses depois eu estava faturando <span class="yellow">5 mil reais</span> do conforto da minha casa. Nesse curso eu quero te mostrar que é <span class="yellow">100% possível</span> você fazer o mesmo.</p></div>
+<div class="card"><p>Quando comecei meu negócio de açaí, riram de mim, ninguém acreditou que daria certo... 2 meses depois eu estava faturando <span class="yellow">5 mil reais</span> do conforto da minha casa.</p></div>
 
 <div class="section-title">O QUE VOCÊ VAI APRENDER</div>
 <ul class="list">
@@ -101,14 +79,13 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 
 <div class="depoimentos-wrap">
 <div class="depoimentos-title">QUEM JÁ PROVOU, APROVA</div>
-<p style="font-size:14px;font-weight:700;color:#d1d5db;margin-bottom:14px">Esses são depoimentos de alguns dos nossos clientes fiéis:</p>
 <div class="depo-grid">
 <img src="854274855_28782131531446809_666226926300550015_n.webp" class="depo-foto" alt="Depoimento">
 <img src="854458107_1531670968722998_1836395890887594007_n.webp" class="depo-foto" alt="Depoimento">
 <img src="depo-kezia.webp" class="depo-foto" alt="Kézia">
 <img src="depo-lucas.webp" class="depo-foto" alt="Lucas">
 </div>
-<div class="depoimentos-impacto"><p>Esses são só <span class="yellow">ALGUNS</span> dos clientes que eu fidelizei ao longo da minha caminhada. E a melhor parte? Você também pode ter a agenda lotada e faturar muito ainda neste verão.</p></div>
+<div class="depoimentos-impacto"><p>Esses são só <span class="yellow">ALGUNS</span> dos clientes que eu fidelizei.</p></div>
 </div>
 
 <div class="oferta-stack">
@@ -116,17 +93,11 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 <div class="oferta-sub">O QUE VOCÊ LEVA HOJE:</div>
 <div class="oferta-lista">
 <span class="blue">Módulo 1 - Açaí (qual comprar, como armazenar, como fazer)</span> - <span class="yellow">Valor R$67</span><br>
-<span class="blue">Módulo 2 - Cardápio Lucrativo (cupuaçu, copo da felicidade + 7 caseiras)</span> - <span class="yellow">Valor R$97</span><br>
+<span class="blue">Módulo 2 - Cupuaçu, Copo da felicidade e 7 Receitas caseiras</span> - <span class="yellow">Valor R$97</span><br>
 <span class="blue">Módulo 3 - Burocracia (CNPJ, MEI, alvará sem contador)</span> - <span class="yellow">Valor R$47</span><br>
 <span class="blue">Módulo 4 - Vendas (iFood do zero + WhatsApp + precificação)</span> - <span class="yellow">Valor R$97</span>
 </div>
 <div class="oferta-total">Total: R$308 por apenas R$87<br><span class="desconto-pisca">71,75% DE DESCONTO</span></div>
-</div>
-
-<div class="price-box">
-<div class="price-de">De R$ 308,00 por apenas</div>
-<div class="price-valor">R$ 87,00</div>
-<div class="price-parcela">à vista no PIX ou 12x de R$ 8,97 no cartão</div>
 </div>
 
 <div class="bonus-highlight">🔥 VAGAS LIMITADAS 🔥</div>
@@ -139,14 +110,14 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 
 <div style="text-align:center;margin:25px 0"><a href="https://pay.kiwify.com.br/JTxa4rK" target="_blank" class="btn-compra">QUERO MEU ACESSO AGORA</a></div>
 <div class="ja-aluno"><a href="/login.html">JÁ SOU ALUNO</a></div>
-<div class="suporte-box"><a href="https://wa.me/5551998114142?text=Ol%C3%A1%20preciso%20de%20ajuda" target="_blank">💬 Tire suas dúvidas</a></div>
+<div class="suporte-box"><a href="https://wa.me/5551998114142?text=Ol%C3%A1" target="_blank">💬 Tire suas dúvidas</a></div>
 
 <div class="garantia">
 <div class="garantia-icone">7</div>
-<p><strong>7 DIAS DE GARANTIA INCONDICIONAL</strong>Se em 7 dias você não amar, devolvemos 100% do seu dinheiro na hora. Sem perguntas, sem burocracia. Você testa tudo sem risco nenhum. Risco ZERO pra você.</p>
+<p><strong>7 DIAS DE GARANTIA INCONDICIONAL</strong>Se em 7 dias você não amar, devolvemos 100% do seu dinheiro na hora. Sem perguntas. Risco ZERO.</p>
 </div>
 
-<div class="small">Acesso imediato • Garantia de 7 dias • Suporte no WhatsApp<br>© 2026 Açaí que te Surpreende</div>
+<div class="small">© 2026 Açaí que te Surpreende</div>
 </div>
 <script>
 (function(){const KEY='acai_timer_fim';let fim=localStorage.getItem(KEY);if(!fim){fim=new Date().getTime()+(1*60+47)*60*1000;localStorage.setItem(KEY,fim);}else{fim=parseInt(fim);}const el=document.getElementById('timer');setInterval(()=>{let d=fim-new Date().getTime();if(d<=0){fim=new Date().getTime()+(2*60+17)*60*1000;localStorage.setItem(KEY,fim);d=fim-new Date().getTime();}let h=Math.floor(d/(1000*60*60));let m=Math.floor((d%(1000*60*60))/(1000*60));let s=Math.floor((d%(1000*60))/1000);el.textContent=`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;},1000);})();
