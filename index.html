@@ -15,7 +15,7 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 .hero-photo{width:100%;height:700px;object-fit:cover;object-position:center 20%;border-radius:18px;display:block;border:2px solid rgba(168,85,247,0.5)}
 @keyframes brilhoPiscando{from{text-shadow:0 0 10px #ffea00,0 0 20px #ffea00}to{text-shadow:0 0 20px #ffea00,0 0 40px #ffe600,0 0 60px #ffea00}}
 .title{font-family:'Anton',sans-serif;font-size:58px;color:#b84dff;text-shadow:0 0 10px #ffea00,0 0 20px #ffea00,0 0 40px #ffea00;text-align:center;line-height:1.1;animation:brilhoPiscando 1.2s infinite alternate}
-.subtitle{font-family:'Anton',sans-serif;color:#ffea00;font-size:21px;padding:12px 20px 0}
+.subtitle{font-family:'Anton',sans-serif;color:#b84dff;font-size:26px;padding:16px 20px 0;text-shadow:0 0 15px rgba(184,77,255,0.8);letter-spacing:1px;font-weight:900}
 .card{background:#000;border:1px solid rgba(168,85,247,0.6);border-radius:14px;padding:20px;margin:18px 20px}
 .card p{font-size:22px;line-height:1.5;font-weight:900;color:#fff}
 .section-title{font-family:'Anton',sans-serif;color:#c084fc;font-size:30px;margin:28px 20px 0;padding-bottom:6px;border-bottom:3px solid #a855f7;display:inline-block;text-transform:uppercase}
@@ -45,6 +45,7 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 .price-box{background:rgba(255,255,255,0.06);border:2px solid #ffea00;border-radius:16px;padding:22px;margin:26px 20px 0;text-align:center}
 .price-de{color:#9ca3af;font-size:14px;text-decoration:line-through}
 .price-valor{color:#ffea00;font-family:'Anton',sans-serif;font-size:56px;line-height:1;margin-top:4px}
+.price-parcela{color:#fff;font-size:13px;margin-top:4px}
 .timer-box{background:#b91c1c;border-radius:12px;padding:14px;margin:22px 20px 0;text-align:center;border:2px solid #ffea00}
 .btn-compra{background:#00d26a;color:#fff;font-family:'Anton',sans-serif;font-size:28px;padding:22px 55px;border-radius:12px;text-decoration:none;display:inline-block;text-align:center;box-shadow:0 0 25px rgba(0,210,106,0.8);animation:brilhoForte 1s infinite alternate;width:90%;max-width:550px}
 @keyframes brilhoForte{0%{box-shadow:0 0 20px rgba(0,210,106,0.7)}100%{box-shadow:0 0 40px rgba(0,210,106,1)}}
@@ -52,13 +53,14 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 .ja-aluno a{color:#c084fc;font-weight:800;font-size:16px;text-decoration:underline}
 .suporte-box{background:rgba(37,211,102,0.12);border:1px solid #25D366;border-radius:50px;padding:14px;margin:24px 20px;text-align:center}
 .suporte-box a{color:#fff;font-weight:900;font-size:18px;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:10px}
-.garantia{background:linear-gradient(135deg,#000000 0%,#0a1a0f 100%);border:2px solid #4ade80;border-radius:20px;padding:24px;margin:32px 20px;display:flex;gap:18px;align-items:center;box-shadow:0 0 30px rgba(74,222,128,0.25)}
-.garantia-icone{background:#4ade80;color:#000;width:72px;height:72px;min-width:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:38px;font-weight:900;flex-shrink:0}
-.garantia strong{color:#4ade80;font-size:19px;display:block;margin-bottom:6px;font-family:'Anton',sans-serif}
+.garantia{background:linear-gradient(135deg,#000000 0%,#0a1a0f 100%);border:2px solid #4ade80;border-radius:20px;padding:24px;margin:32px 20px;display:flex;gap:18px;align-items:center;box-shadow:0 0 30px rgba(74,222,128,0.25),inset 0 0 20px rgba(74,222,128,0.05)}
+.garantia-icone{background:#4ade80;color:#000;width:72px;height:72px;min-width:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:38px;font-weight:900;box-shadow:0 0 20px rgba(74,222,128,0.7);flex-shrink:0}
+.garantia strong{color:#4ade80;font-size:19px;display:block;margin-bottom:6px;font-family:'Anton',sans-serif;letter-spacing:0.5px}
 .garantia p{font-size:15px;line-height:1.5;font-weight:700;color:#fff}
-.small{color:#9ca3af;font-size:11px;text-align:center;margin-top:14px;padding-bottom:40px}
+.small{color:#9ca3af;font-size:11px;text-align:center;margin-top:14px;padding-bottom:40px;line-height:1.4}
 @media (min-width:768px){
   .title{font-size:68px !important}
+  .subtitle{font-size:30px !important}
   .card p{font-size:26px}
   .bonus-box p{font-size:20px}
   .green{font-size:24px}
@@ -66,6 +68,11 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
   .oferta-stack .oferta-sub{font-size:24px}
   .oferta-stack .oferta-lista{font-size:18px}
   .oferta-stack .oferta-total{font-size:22px}
+  .bonus-highlight{font-size:26px}
+  .garantia{padding:28px}
+  .garantia-icone{width:84px;height:84px;min-width:84px;font-size:42px}
+  .garantia strong{font-size:22px}
+  .garantia p{font-size:17px}
 }
 </style>
 </head>
@@ -73,7 +80,7 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 <div class="container">
 <div class="hero-wrap"><img src="IMG-20261016-WA0716.jpg" class="hero-photo" alt="Açaí"></div>
 <div class="title">LUCRE NESSE VERÃO ENTRE R$ 600 A R$ 5000 REAIS</div>
-<div class="subtitle">Eu me chamo Natanael Anselmo</div>
+<div class="subtitle">Eu me chamo Natanael</div>
 <div class="card"><p>Quando comecei meu negócio de açaí, riram de mim, ninguém acreditou que daria certo... 2 meses depois eu estava faturando <span class="yellow">5 mil reais</span> do conforto da minha casa. Nesse curso eu quero te mostrar que é <span class="yellow">100% possível</span> você fazer o mesmo.</p></div>
 
 <div class="section-title">O QUE VOCÊ VAI APRENDER</div>
@@ -94,13 +101,14 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 
 <div class="depoimentos-wrap">
 <div class="depoimentos-title">QUEM JÁ PROVOU, APROVA</div>
+<p style="font-size:14px;font-weight:700;color:#d1d5db;margin-bottom:14px">Esses são depoimentos de alguns dos nossos clientes fiéis:</p>
 <div class="depo-grid">
 <img src="854274855_28782131531446809_666226926300550015_n.webp" class="depo-foto" alt="Depoimento">
 <img src="854458107_1531670968722998_1836395890887594007_n.webp" class="depo-foto" alt="Depoimento">
 <img src="depo-kezia.webp" class="depo-foto" alt="Kézia">
 <img src="depo-lucas.webp" class="depo-foto" alt="Lucas">
 </div>
-<div class="depoimentos-impacto"><p>Esses são só <span class="yellow">ALGUNS</span> dos clientes que eu fidelizei ao longo da minha caminhada.</p></div>
+<div class="depoimentos-impacto"><p>Esses são só <span class="yellow">ALGUNS</span> dos clientes que eu fidelizei ao longo da minha caminhada. E a melhor parte? Você também pode ter a agenda lotada e faturar muito ainda neste verão.</p></div>
 </div>
 
 <div class="oferta-stack">
@@ -126,6 +134,7 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 <div class="timer-box">
 <p style="color:#ffea00;font-family:Anton;font-size:16px">🔥 ESSA TURMA ENCERRA EM:</p>
 <div id="timer" style="color:#fff;font-family:Anton;font-size:36px">01:47:00</div>
+<p style="color:#fff;font-size:12px;font-weight:700;margin-top:8px">Depois volta para <span style="text-decoration:line-through">R$197</span> | Restam 7 vagas</p>
 </div>
 
 <div style="text-align:center;margin:25px 0"><a href="https://pay.kiwify.com.br/JTxa4rK" target="_blank" class="btn-compra">QUERO MEU ACESSO AGORA</a></div>
@@ -134,7 +143,7 @@ body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100%;backgr
 
 <div class="garantia">
 <div class="garantia-icone">7</div>
-<p><strong>7 DIAS DE GARANTIA INCONDICIONAL</strong>Se em 7 dias você não amar, devolvemos 100% do seu dinheiro na hora. Sem perguntas. Risco ZERO.</p>
+<p><strong>7 DIAS DE GARANTIA INCONDICIONAL</strong>Se em 7 dias você não amar, devolvemos 100% do seu dinheiro na hora. Sem perguntas, sem burocracia. Você testa tudo sem risco nenhum. Risco ZERO pra você.</p>
 </div>
 
 <div class="small">Acesso imediato • Garantia de 7 dias • Suporte no WhatsApp<br>© 2026 Açaí que te Surpreende</div>
