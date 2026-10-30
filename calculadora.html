@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><style>
+@font-face {
+  font-family: "Optimistic";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/fonts/OptimisticAI_VF_Optimized.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Optimistic Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/OptimisticMono_W_TextRegular.woff2") format("woff2");
+}
+:where(html) {
+  font-family: "Optimistic", system-ui, sans-serif;
+}
+:where(code, pre, kbd, samp) {
+  font-family: "Optimistic Mono", ui-monospace, monospace;
+}
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Lucro do Açaí</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
+  body{background:linear-gradient(135deg,#1a0033,#2a0050);color:#fff;min-height:100vh;padding:20px}
+  .container{max-width:900px;margin:0 auto}
+  h1{text-align:center;color:#FFD700;font-size:28px;margin-bottom:8px}
+  .subtitle{text-align:center;color:#d9c8ff;margin-bottom:25px;font-size:16px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:700px){.grid{grid-template-columns:1fr}}
+  .card{background:#2d1155;border:1px solid rgba(255,215,0,0.3);border-radius:16px;padding:20px;box-shadow:0 0 20px rgba(255,215,0,0.15)}
+  .card h2{color:#FFD700;font-size:18px;margin-bottom:15px}
+  label{display:block;font-size:14px;margin:12px 0 6px;color:#e6d9ff}
+  input[type=number],input[type=text]{width:100%;padding:12px;border-radius:10px;border:1px solid #5a2a9a;background:#1e003e;color:#fff;font-size:16px}
+  input:focus{outline:2px solid #FFD700}
+  .pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+  .pill{padding:10px 16px;border-radius:20px;border:1px solid #5a2a9a;background:#1e003e;color:#fff;cursor:pointer;font-size:14px}
+  .pill.active{background:#FFD700;color:#1a0033;font-weight:bold;border-color:#FFD700}
+  input[type=range]{width:100%;margin-top:10px;accent-color:#FFD700}
+  .vendas-valor{text-align:center;font-size:22px;color:#FFD700;font-weight:bold;margin-top:8px}
+  .result-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+  .result{background:#1e003e;border-radius:12px;padding:15px;text-align:center;border:1px solid rgba(255,215,0,0.2)}
+  .result small{display:block;color:#bda6ff;font-size:12px;margin-bottom:6px}
+  .result strong{font-size:20px;color:#fff}
+  .result.highlight{grid-column:1 / -1;background:linear-gradient(135deg,#FFD700,#ffb800);border:none}
+  .result.highlight small{color:#5a3d00}
+  .result.highlight strong{color:#1a0033;font-size:26px}
+  .margem-msg{margin-top:15px;padding:12px;border-radius:10px;text-align:center;font-weight:bold;font-size:14px}
+  .margem-baixa{background:#ff4d4d33;color:#ff8080;border:1px solid #ff4d4d}
+  .margem-boa{background:#ffD70033;color:#FFD700;border:1px solid #FFD700}
+  .margem-otima{background:#00e67633;color:#69f0ae;border:1px solid #00e676}
+  .dica{margin-top:20px;background:#1e003e;border-left:4px solid #FFD700;padding:15px;border-radius:8px;font-size:14px;color:#d9c8ff}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Calculadora de Lucro do Açaí</h1>
+  <p class="subtitle">Descubra seu lucro por copo em segundos</p>
+  <div class="grid">
+    <div class="card">
+      <h2>Seus custos</h2>
+      <label>Tamanho do copo</label>
+      <div class="pills" id="pills">
+        <div class="pill" data-v="300ml">300ml</div>
+        <div class="pill active" data-v="500ml">400ml</div>
+        <div class="pill" data-v="500ml">500ml</div>
+        <div class="pill" data-v="700ml">700ml</div>
+      </div>
+      <label>Custo do açaí puro por copo (R$)</label>
+      <input type="number" id="custoAcai" value="4.50" step="0.01" min="0">
+      <label>Acompanhamentos e recheios (R$)</label>
+      <input type="number" id="custoAcomp" value="3.00" step="0.01" min="0">
+      <label>Embalagem (copo + tampa + colher) (R$)</label>
+      <input type="number" id="custoEmb" value="1.50" step="0.01" min="0">
+      <label>Taxa iFood / entrega (%)</label>
+      <input type="number" id="taxa" value="12" step="0.1" min="0" max="100">
+      <label>Preço de venda (R$)</label>
+      <input type="number" id="preco" value="18.00" step="0.01" min="0">
+      <label>Vendas por dia</label>
+      <input type="range" id="vendas" min="1" max="200" value="30">
+      <div class="vendas-valor"><span id="vendasVal">30</span> copos/dia</div>
+    </div>
+    <div class="card">
+      <h2>Seu resultado</h2>
+      <div class="result-grid">
+        <div class="result"><small>Custo total por copo</small><strong id="rCusto">R$ 0,00</strong></div>
+        <div class="result"><small>Lucro por copo</small><strong id="rLucroCopo" style="color:#FFD700">R$ 0,00</strong></div>
+        <div class="result"><small>Margem de lucro</small><strong id="rMargem">0%</strong></div>
+        <div class="result"><small>Lucro por dia</small><strong id="rLucroDia">R$ 0,00</strong></div>
+        <div class="result highlight"><small>Lucro no mês (26 dias)</small><strong id="rLucroMes">R$ 0,00</strong></div>
+        <div class="result" style="grid-column:1 / -1"><small>Faturamento mensal</small><strong id="rFat">R$ 0,00</strong></div>
+      </div>
+      <div id="margemMsg" class="margem-msg"></div>
+      <div class="dica">Dica: some todos os custos antes de precificar. O ideal é margem acima de 35% para delivery.</div>
+    </div>
+  </div>
+</div>
+<script>
+function fmt(v){return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}
+function calc(){
+  var ca=parseFloat(document.getElementById('custoAcai').value)||0;
+  var ac=parseFloat(document.getElementById('custoAcomp').value)||0;
+  var em=parseFloat(document.getElementById('custoEmb').value)||0;
+  var tx=parseFloat(document.getElementById('taxa').value)||0;
+  var pr=parseFloat(document.getElementById('preco').value)||0;
+  var vd=parseInt(document.getElementById('vendas').value)||0;
+  document.getElementById('vendasVal').textContent=vd;
+  var custoTaxa=pr*(tx/100);
+  var custoTotal=ca+ac+em+custoTaxa;
+  var lucroCopo=pr-custoTotal;
+  var margem=pr>0?(lucroCopo/pr*100):0;
+  var lucroDia=lucroCopo*vd;
+  var lucroMes=lucroDia*26;
+  var fat=pr*vd*26;
+  document.getElementById('rCusto').textContent=fmt(custoTotal);
+  document.getElementById('rLucroCopo').textContent=fmt(lucroCopo);
+  document.getElementById('rMargem').textContent=margem.toFixed(1)+'%';
+  document.getElementById('rLucroDia').textContent=fmt(lucroDia);
+  document.getElementById('rLucroMes').textContent=fmt(lucroMes);
+  document.getElementById('rFat').textContent=fmt(fat);
+  var msg=document.getElementById('margemMsg');
+  if(margem<20){msg.className='margem-msg margem-baixa';msg.textContent='Margem baixa - aumente seu preço';}
+  else if(margem<=35){msg.className='margem-msg margem-boa';msg.textContent='Margem boa, dá pra otimizar';}
+  else{msg.className='margem-msg margem-otima';msg.textContent='Margem ótima!';}
+}
+document.querySelectorAll('input').forEach(function(el){el.addEventListener('input',calc)});
+document.querySelectorAll('.pill').forEach(function(p){
+  p.addEventListener('click',function(){
+    document.querySelectorAll('.pill').forEach(function(x){x.classList.remove('active')});
+    p.classList.add('active');
+  });
+});
+calc();
+</script>
+<script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","source-entity-id","source_entity_id","data-product","data-metadata","data-meta"];var DATASET_KEYS=["productId","productid","product_id","sourceEntityId","sourceentityid","source_entity_id","product","metadata","meta"];function readProductId(value){if(typeof value!=="string"||value.length===0)return null;if(/^[0-9]{6,}$/.test(value))return value;var match=value.match(/(?:product(?:_|-)?id|source(?:_|-)?entity(?:_|-)?id)["'=:\s]+([0-9]{6,})/i);return match?match[1]:null}function extractProductId(start){for(var node=start;node&&node!==document.body;node=node.parentElement){for(var i=0;i<ATTR_NAMES.length;i++){var attrValue=node.getAttribute&&node.getAttribute(ATTR_NAMES[i]);var attrProductId=readProductId(attrValue);if(attrProductId)return attrProductId}var dataset=node.dataset||null;if(dataset){for(var j=0;j<DATASET_KEYS.length;j++){var dataValue=dataset[DATASET_KEYS[j]];var dataProductId=readProductId(dataValue);if(dataProductId)return dataProductId}}}return null}function isInlineMediaSlotElement(node){return !!(node&&node.getAttribute&&node.getAttribute("data-clippy-inline-media-slot")!==null)}function findInlineMediaSlot(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(isInlineMediaSlotElement(node))return node}return null}function readInlineMediaUrl(node){if(!node)return null;return node.getAttribute&&((node.getAttribute("data-clippy-inline-media-url")||node.getAttribute("data-url")||node.getAttribute("data_url")))||node.href||null}function stripHash(url){return String(url).replace(/#.*$/,"")}function urlsMatch(a,b){if(!a||!b)return false;try{return stripHash(new URL(a,loc).href)===stripHash(new URL(b,loc).href)}catch(_){return stripHash(a)===stripHash(b)}}function isFirstPartyReelUrl(value){try{var url=new URL(value,loc);if(url.protocol!=="https:")return false;var host=url.hostname.toLowerCase();var supported=host==="instagram.com"||host.endsWith(".instagram.com")||host==="facebook.com"||host.endsWith(".facebook.com");return supported&&/\/reels?\//i.test(url.pathname)}catch(_){return false}}function isInlineMediaUrlClick(node,href){var slot=findInlineMediaSlot(node);if(!slot)return false;var slotUrl=readInlineMediaUrl(slot);if(slotUrl)return urlsMatch(href,slotUrl);return isFirstPartyReelUrl(href)}function findDataHref(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(node.getAttribute){var href=node.getAttribute("data-href")||node.getAttribute("data-url");if(href)return{href:href,node:node}}}return null}var nativeOpen=window.open;window.open=function(url){if(parent!==window&&typeof url==="string"&&/^https?:\/\//.test(url)){parent.postMessage({type:"ecto:usercontent-link-click",href:url},"*");return null}return nativeOpen?nativeOpen.apply(window,arguments):null};document.addEventListener("click",function(e){var target=e.target instanceof Element?e.target:null;if(!target)return;if(parent===window)return;var a=target.closest?target.closest("a[href]"):null;if(a&&a.href&&/^https?:\/\//.test(a.href)&&a.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(a,a.href))return;var productId=extractProductId(target)||extractProductId(a);if(productId){e.preventDefault();parent.postMessage({type:"ecto-artifact-link-click",productId:productId},"*");return}e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:a.href},"*");return}var dataHref=findDataHref(target);if(dataHref&&/^https?:\/\//.test(dataHref.href)&&dataHref.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(dataHref.node,dataHref.href))return;e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:dataHref.href},"*")}},true)})();</script><script>(function(){var FOCUS_TYPE="ecto:artifact-focus-request";var CLOSE_TYPE="ecto:artifact-close-request";function focusArtifactDocument(){var body=document.body;if(!body)return;try{window.focus();}catch(e){}if(!body.hasAttribute("tabindex"))body.setAttribute("tabindex","-1");try{body.focus({preventScroll:true});}catch(e){try{body.focus();}catch(e2){}}}window.addEventListener("message",function(event){if(event.source!==window.parent)return;var data=event.data;if(!data||typeof data!=="object"||data.type!==FOCUS_TYPE)return;if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",focusArtifactDocument,{once:true});return;}focusArtifactDocument();});window.addEventListener("keydown",function(event){if(event.key!=="Escape")return;window.setTimeout(function(){if(event.defaultPrevented)return;window.parent.postMessage({type:CLOSE_TYPE},"*");},0);});})();</script></body>
+</html>
