@@ -48,7 +48,114 @@ video{width:100%;border-radius:10px;margin-top:12px;border:1px solid #a855f7}
   <div class="modulo"><div class="modulo-num">MÓDULO 4</div><div class="modulo-title">Estratégia para venda</div><video src="modulo4.mp4" controls></video></div>
   <div class="modulo"><div class="modulo-num">MÓDULO 5</div><div class="modulo-title">Cupuaçu e Copo da Felicidade</div><video src="modulo5.mp4" controls></video></div>
   <div class="modulo"><div class="modulo-num">MÓDULO 6</div><div class="modulo-title">Bônus - 7 receitas caseiras</div><video src="modulo6.mp4" controls></video></div>
-  <div class="modulo"><div class="modulo-num">MÓDULO 7</div><div class="modulo-title">Calculadora e Bônus</div><video src="modulo7.mp4" controls></video></div>
+  <div class="modulo"><div class="modulo-num">MÓDULO 7</div><div class="modulo-title">Calculadora e Bônus</div><video src="modulo7.mp4" controls></video><!-- INICIO CALCULADORA MEMBROS - COLE DENTRO DO BODY DO membros.html -->
+<style>
+  .calc-membros{box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#1a0033,#2a0050);border:1px solid rgba(255,215,0,0.3);border-radius:16px;padding:20px;margin:20px 0;color:#fff;box-shadow:0 0 20px rgba(255,215,0,0.15)}
+  .calc-membros *{box-sizing:border-box}
+  .calc-membros h2{color:#FFD700;font-size:22px;text-align:center;margin-bottom:5px}
+  .calc-membros .sub{color:#d9c8ff;text-align:center;font-size:14px;margin-bottom:15px}
+  .calc-membros label{display:block;font-size:14px;margin:12px 0 6px;color:#e6d9ff}
+  .calc-membros input[type=number]{width:100%;padding:12px;border-radius:10px;border:1px solid #5a2a9a;background:#1e003e;color:#fff;font-size:16px}
+  .calc-membros input[type=range]{width:100%;margin-top:10px;accent-color:#FFD700}
+  .calc-membros .pills{display:flex;gap:8px;flex-wrap:wrap}
+  .calc-membros .pill{padding:8px 14px;border-radius:20px;border:1px solid #5a2a9a;background:#1e003e;color:#fff;cursor:pointer;font-size:13px}
+  .calc-membros .pill.active{background:#FFD700;color:#1a0033;font-weight:bold}
+  .calc-membros .vendas-valor{text-align:center;color:#FFD700;font-weight:bold;font-size:20px;margin-top:8px}
+  .calc-membros .res-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:15px}
+  .calc-membros .res{background:#1e003e;border-radius:10px;padding:12px;text-align:center;border:1px solid rgba(255,215,0,0.2)}
+  .calc-membros .res small{display:block;color:#bda6ff;font-size:11px;margin-bottom:4px}
+  .calc-membros .res strong{font-size:18px;color:#fff}
+  .calc-membros .res.destaque{grid-column:1/-1;background:linear-gradient(135deg,#FFD700,#ffb800);border:none}
+  .calc-membros .res.destaque small{color:#5a3d00}
+  .calc-membros .res.destaque strong{color:#1a0033;font-size:24px}
+  .calc-membros .msg{margin-top:12px;padding:10px;border-radius:8px;text-align:center;font-weight:bold;font-size:13px}
+</style>
+
+<div class="calc-membros" id="calcMembros">
+  <h2>Calculadora de Lucro do Açaí</h2>
+  <div class="sub">Exclusivo para alunos</div>
+
+  <label>Tamanho do copo</label>
+  <div class="pills" id="pillsM">
+    <div class="pill" onclick="selPill(this)">300ml</div>
+    <div class="pill active" onclick="selPill(this)">400ml</div>
+    <div class="pill" onclick="selPill(this)">500ml</div>
+    <div class="pill" onclick="selPill(this)">700ml</div>
+  </div>
+
+  <label>Custo do açaí puro por copo (R$)</label>
+  <input type="number" id="m_custoAcai" value="4.50" step="0.01" oninput="calcM()">
+  <label>Acompanhamentos e recheios (R$)</label>
+  <input type="number" id="m_custoAcomp" value="3.00" step="0.01" oninput="calcM()">
+  <label>Embalagem (R$)</label>
+  <input type="number" id="m_custoEmb" value="1.50" step="0.01" oninput="calcM()">
+  <label>Taxa iFood / entrega (%)</label>
+  <input type="number" id="m_taxa" value="12" step="0.1" oninput="calcM()">
+  <label>Preço de venda (R$)</label>
+  <input type="number" id="m_preco" value="18.00" step="0.01" oninput="calcM()">
+  <label>Vendas por dia</label>
+  <input type="range" id="m_vendas" min="1" max="200" value="30" oninput="calcM()">
+  <div class="vendas-valor"><span id="m_vendasVal">30</span> copos/dia</div>
+
+  <div class="res-grid">
+    <div class="res"><small>Custo total</small><strong id="m_rCusto">R$ 0,00</strong></div>
+    <div class="res"><small>Lucro por copo</small><strong id="m_rLucroCopo" style="color:#FFD700">R$ 0,00</strong></div>
+    <div class="res"><small>Margem</small><strong id="m_rMargem">0%</strong></div>
+    <div class="res"><small>Lucro dia</small><strong id="m_rDia">R$ 0,00</strong></div>
+    <div class="res destaque"><small>Lucro mês (26 dias)</small><strong id="m_rMes">R$ 0,00</strong></div>
+  </div>
+  <div id="m_msg" class="msg"></div>
+</div>
+
+<script>
+function fmtBRL(v){return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}
+function selPill(el){var p=el.parentElement.querySelectorAll('.pill');p.forEach(function(x){x.classList.remove('active')});el.classList.add('active')}
+function calcM(){
+  var ca=parseFloat(document.getElementById('m_custoAcai').value)||0;
+  var ac=parseFloat(document.getElementById('m_custoAcomp').value)||0;
+  var em=parseFloat(document.getElementById('m_custoEmb').value)||0;
+  var tx=parseFloat(document.getElementById('m_taxa').value)||0;
+  var pr=parseFloat(document.getElementById('m_preco').value)||0;
+  var vd=parseInt(document.getElementById('m_vendas').value)||0;
+  document.getElementById('m_vendasVal').textContent=vd;
+  var custoTotal=ca+ac+em+pr*(tx/100);
+  var lucro=pr-custoTotal;
+  var margem=pr>0?lucro/pr*100:0;
+  document.getElementById('m_rCusto').textContent=fmtBRL(custoTotal);
+  document.getElementById('m_rLucroCopo').textContent=fmtBRL(lucro);
+  document.getElementById('m_rMargem').textContent=margem.toFixed(1)+'%';
+  document.getElementById('m_rDia').textContent=fmtBRL(lucro*vd);
+  document.getElementById('m_rMes').textContent=fmtBRL(lucro*vd*26);
+  var msg=document.getElementById('m_msg');
+  if(margem<20){msg.style.background='#ff4d4d33';msg.style.color='#ff8080';msg.textContent='Margem baixa - aumente seu preço';}
+  else if(margem<=35){msg.style.background='#ffD70033';msg.style.color='#FFD700';msg.textContent='Margem boa, dá pra otimizar';}
+  else{msg.style.background='#00e67633';msg.style.color='#69f0ae';msg.textContent='Margem ótima!';}
+}
+calcM();
+</script>
+<!-- FIM CALCULADORA MEMBROS -->
+<script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","source-entity-id","source_entity_id","data-product","data-metadata","data-meta"];var DATASET_KEYS=["productId","productid","product_id","sourceEntityId","sourceentityid","source_entity_id","product","metadata","meta"];function readProductId(value){if(typeof value!=="string"||value.length===0)return null;if(/^[0-9]{6,}$/.test(value))return value;var match=value.match(/(?:product(?:_|-)?id|source(?:_|-)?entity(?:_|-)?id)["'=:\s]+([0-9]{6,})/i);return match?match[1]:null}function extractProductId(start){for(var node=start;node&&node!==document.body;node=node.parentElement){for(var i=0;i<ATTR_NAMES.length;i++){var attrValue=node.getAttribute&&node.getAttribute(ATTR_NAMES[i]);var attrProductId=readProductId(attrValue);if(attrProductId)return attrProductId}var dataset=node.dataset||null;if(dataset){for(var j=0;j<DATASET_KEYS.length;j++){var dataValue=dataset[DATASET_KEYS[j]];var dataProductId=readProductId(dataValue);if(dataProductId)return dataProductId}}}return null}function isInlineMediaSlotElement(node){return !!(node&&node.getAttribute&&node.getAttribute("data-clippy-inline-media-slot")!==null)}function findInlineMediaSlot(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(isInlineMediaSlotElement(node))return node}return null}function readInlineMediaUrl(node){if(!node)return null;return node.getAttribute&&((node.getAttribute("data-clippy-inline-media-url")||node.getAttribute("data-url")||node.getAttribute("data_url")))||node.href||null}function stripHash(url){return String(url).replace(/#.*$/,"")}function urlsMatch(a,b){if(!a||!b)return false;try{return stripHash(new URL(a,loc).href)===stripHash(new URL(b,loc).href)}catch(_){return stripHash(a)===stripHash(b)}}function isFirstPartyReelUrl(value){try{var url=new URL(value,loc);if(url.protocol!=="https:")return false;var host=url.hostname.toLowerCase();var supported=host==="instagram.com"||host.endsWith(".instagram.com")||host==="facebook.com"||host.endsWith(".facebook.com");return supported&&/\/reels?\//i.test(url.pathname)}catch(_){return false}}function isInlineMediaUrlClick(node,href){var slot=findInlineMediaSlot(node);if(!slot)return false;var slotUrl=readInlineMediaUrl(slot);if(slotUrl)return urlsMatch(href,slotUrl);return isFirstPartyReelUrl(href)}function findDataHref(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(node.getAttribute){var href=node.getAttribute("data-href")||node.getAttribute("data-url");if(href)return{href:href,node:node}}}return null}var nativeOpen=window.open;window.open=function(url){if(parent!==window&&typeof url==="string"&&/^https?:\/\//.test(url)){parent.postMessage({type:"ecto:usercontent-link-click",href:url},"*");return null}return nativeOpen?nativeOpen.apply(window,arguments):null};document.addEventListener("click",function(e){var target=e.target instanceof Element?e.target:null;if(!target)return;if(parent===window)return;var a=target.closest?target.closest("a[href]"):null;if(a&&a.href&&/^https?:\/\//.test(a.href)&&a.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(a,a.href))return;var productId=extractProductId(target)||extractProductId(a);if(productId){e.preventDefault();parent.postMessage({type:"ecto-artifact-link-click",productId:productId},"*");return}e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:a.href},"*");return}var dataHref=findDataHref(target);if(dataHref&&/^https?:\/\//.test(dataHref.href)&&dataHref.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(dataHref.node,dataHref.href))return;e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:dataHref.href},"*")}},true)})();</script><script>(function(){var FOCUS_TYPE="ecto:artifact-focus-request";var CLOSE_TYPE="ecto:artifact-close-request";function focusArtifactDocument(){var body=document.body;if(!body)return;try{window.focus();}catch(e){}if(!body.hasAttribute("tabindex"))body.setAttribute("tabindex","-1");try{body.focus({preventScroll:true});}catch(e){try{body.focus();}catch(e2){}}}window.addEventListener("message",function(event){if(event.source!==window.parent)return;var data=event.data;if(!data||typeof data!=="object"||data.type!==FOCUS_TYPE)return;if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",focusArtifactDocument,{once:true});return;}focusArtifactDocument();});window.addEventListener("keydown",function(event){if(event.key!=="Escape")return;window.setTimeout(function(){if(event.defaultPrevented)return;window.parent.postMessage({type:CLOSE_TYPE},"*");},0);});})();</script><style>
+@font-face {
+  font-family: "Optimistic";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/fonts/OptimisticAI_VF_Optimized.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Optimistic Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/OptimisticMono_W_TextRegular.woff2") format("woff2");
+}
+:where(html) {
+  font-family: "Optimistic", system-ui, sans-serif;
+}
+:where(code, pre, kbd, samp) {
+  font-family: "Optimistic Mono", ui-monospace, monospace;
+}
+</style></div>
 </div>
 </body>
 </html>
